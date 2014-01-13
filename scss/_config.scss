@@ -1,0 +1,144 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// The configration file for Brugge | v0.5
+//
+// -Grid
+// -General
+// -Layout
+// -Fonts
+// -Colors
+// -Icons
+// -Helpers
+//
+///////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//									Grid
+//
+///////////////////////////////////////////////////////////////////////////////
+
+$row-width: 1020px;					// the width of the content ( #main )
+$main-column-width: 720px;			// the width of the main column
+$column-gutter: 20px;					// we don't use default gutter variable
+$custom-gutter: 20px;				// this is our custom gutter variable
+$total-columns: 17;				// 25 * 2 * 3 = 150 columns ( for 720/1000, 1000 in lowest terms is 25 )
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//									General
+//
+///////////////////////////////////////////////////////////////////////////////
+
+$body-bg: #e7e7e7;
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//									Layout
+//
+///////////////////////////////////////////////////////////////////////////////
+
+$header-height: 80px;				// height of the header
+$menu-height: 40px;					// height of the navigation menu
+$inner-padding: 15px;				// blocks' padding
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//									Fonts
+//
+///////////////////////////////////////////////////////////////////////////////
+
+//web font here #WIP
+
+// Font sizes. Main font-size is used as a base for whitespace to maintain rythm
+$globalFontsize: 12;
+$globalWhitespace: 12 * 1px; //use times 1/4, 1/2, 1, 2, 4, etc.
+$body-font-color: #222;
+$body-font-weight: normal;
+$body-font-style: normal;
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//									Colors
+//
+///////////////////////////////////////////////////////////////////////////////
+
+$color-l: 				#32b498; 			// Links, buttons, highlight area
+$color-h:				#292929;			// calendarBg, footer
+$color-f:				#999;				// footer font, border
+$color-b:				#fff;				// normal blocks bgColor
+$color-m:     			#fe0000;			// mainmenu
+$color-t:				#000;				// normal text color
+$color-t-a:				#fff;				// text alternative
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//									Icons
+//
+///////////////////////////////////////////////////////////////////////////////
+
+//iconfont here
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//									Helpers
+//
+///////////////////////////////////////////////////////////////////////////////
+
+@mixin transition($what: all, $duration: .2s, $easing: ease, $delay: 0) {
+	-webkit-transition: $what $duration $easing $delay;
+	   -moz-transition: $what $duration $easing $delay;
+	    -ms-transition: $what $duration $easing $delay;
+	     -o-transition: $what $duration $easing $delay;
+	        transition: $what $duration $easing $delay;
+}
+
+@mixin globalShadow($option: default) {
+	@if $option == reset {
+	-webkit-box-shadow: none;
+	   -moz-box-shadow: none;
+	        box-shadow: none;
+	} @else {
+	-webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2);
+	   -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2);
+	        box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2);
+	}
+}
+
+@mixin globalTextShadow 								{ text-shadow: 0 0 6px rgba(0,0,0,.2); }
+@mixin ellipsis 										{ display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@mixin textReplace 										{ display: block; text-indent: -9999px; overflow: hidden; }
+@mixin visuallyhidden									{ border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+@mixin clearfix {
+	&:before,
+	&:after { content: " "; display: table; }
+	&:after { clear: both; }
+}

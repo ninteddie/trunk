@@ -1,0 +1,73 @@
+/******************************************************************************
+* TABLETS
+******************************************************************************/
+
+@media only screen and (max-width: 1000px) {
+	//$wrapperWidth: $contentWidth; // store the original width so we can use it
+	//$contentWidth: 768px;
+
+	//#wrapper 					{ @include transition(left); max-width: $wrapperWidth; width: $wrapperWidth; position: relative; left: -1 * $menuWidth; }
+	.menuVisible #wrapper 		{ left: 0; }
+
+	//#header						{ max-width: $contentWidth; width: $contentWidth; position: relative; }
+	//#main 						{ max-width: $contentWidth; width: $contentWidth; position: relative; overflow: hidden; }
+	#header {
+		#menuToggle 			{ display: inline-block; }
+		&.row .row 				{ margin: 0; }
+	}
+	
+	// save button fast-fix; better to make de original css not px but %
+	.fixed[data-magellan-expedition] div {
+		padding-left: inherit;
+		width: auto;
+	}
+}
+
+
+/******************************************************************************
+* SMARTPHONES
+******************************************************************************/
+
+@media only screen and (max-width: 767px) {
+	$contentWidth: 100%;
+	
+	#wrapper 					{ position: relative; left: 0; }
+	#menuWrapper 				{ height: 0; overflow: hidden; }
+	.menuVisible #menuWrapper 	{ height: auto; }
+
+	#header,
+	#container,
+	#wrapper,
+	#menuWrapper,
+	#menu,
+	//#main 						{ max-width: $contentWidth; width: $contentWidth; }
+	
+	#header {
+		#title 					{ margin: 0; }
+		#servicemenu 			{ margin: 0; }
+		#servicemenu 			{ float: left; }
+		#servicemenu > a,
+		#servicemenu > span 	{ margin-right: $globalWhitespace; margin-left: 0; }
+	}
+
+	#menu 						{ padding: 0; }
+
+	// making text behind same as text below
+	fieldset {
+		label.right 			{ text-align: left; }
+		.right 					{ float: left!important; }
+		label.inline 			{ margin-bottom: auto; }
+		.fieldDesc 				{ margin-top: 0px; }
+		.row .small-12 p 		{ margin-top: 0px; }	
+	}
+	
+	// padding left and right can go
+	.section-container.accordion > section > .title a,
+	.section-container.accordion > .section > .title a {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	
+	section .onlyRadioCheckbox div.right { padding-bottom: $globalWhitespace; }
+		
+}

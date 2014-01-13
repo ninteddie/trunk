@@ -1,0 +1,117 @@
+@import "_config.scss";
+@import "_config-external.scss";
+/******************************************************************************
+* GENERAL styles
+******************************************************************************/
+#lanuge-switch {
+	span {
+		@include visuallyhidden;
+	}
+}
+
+
+.large-half {
+	width: 50%;
+}
+
+.large-one-third {
+	width: 33.3333%;
+}
+
+.large-one-fourth {
+	width: 25%;
+}
+
+.inner-wrapper {
+		background-color: $color-b;
+		margin-bottom: $custom-gutter;
+		padding: $inner-padding;
+
+		h2 {
+			margin: 0;
+		}
+	}
+
+.main-column {
+	background-color: transparent;
+}
+
+/* header */
+#header {
+	width: 100%;
+	height: $header-height;
+	position: fixed;
+	background-color: $color-b;
+	z-index: 2;
+}
+
+#logoAnchor h2 {
+	color: $color-t;
+	font-weight: bold;
+	text-transform: uppercase;
+
+	span {
+		font-weight: normal;
+	}
+}
+/*****************************************************************************/
+
+/* main */
+#main {
+	padding-top: $header-height + $menu-height;
+}
+/*****************************************************************************/
+
+
+/* footer */
+#footer {
+	width: 100%;
+	background-color: #010101;
+	color: $color-f;
+	
+
+	.footer-wrapper {
+		padding-top: 30px;
+		background: transparent url(../img/footer-bg.gif) 0 0 repeat;
+
+		.footer-last {
+			padding-right: $custom-gutter * 3;
+		}
+
+	}
+
+	.sponsor {
+
+		.columns:first-child {
+
+			.inner-wrapper {
+				border-top: none;
+			}
+		}
+
+		.columns:last-child {
+			
+			.inner-wrapper {
+				border-bottom: $color-f 1px solid;
+			}
+		}
+	}
+
+	.inner-wrapper {
+		padding-top: 10px;
+		padding-left: 0;
+		border-top: $color-f 1px solid;
+		background: inherit;
+	}
+}
+
+#toggle-footer {
+	.inner-wrapper {
+		margin-bottom: 0;
+		border-top: none;
+	}
+}
+
+/*****************************************************************************/
+
+@import "_breakpoints.scss";

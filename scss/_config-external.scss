@@ -1,0 +1,136 @@
+//Foundation 4 custom variables
+
+$base-font-size: 100% * 14 / 16 !default;
+$em-base: 14px;
+
+// $include-html-form-classes: $include-html-classes;
+
+
+// $form-spacing: 1em;
+
+
+// $form-label-pointer: pointer;
+// $form-label-font-size: 1em;
+// $form-label-font-weight: 500;
+//$form-label-font-color: #000;
+// $form-label-bottom-margin: .25em;
+//$input-font-family: inherit;
+// $input-font-color: rgba(0,0,0,0.75);
+// $input-font-size: 1em;
+//$input-bg-color: #fff;
+//$input-focus-bg-color: #fff;
+//$input-border-color: $colorSecondaryMedium;
+//$input-focus-border-color: $colorSecondaryDark;
+// $input-border-style: solid;
+// $input-border-width: 1px;
+// $input-disabled-bg: #ddd;
+//$input-box-shadow: none;
+//$input-include-glowing-effect: false;
+
+
+// $fieldset-border-style: solid;
+// $fieldset-border-width: 1px;
+// $fieldset-border-color: #ddd;
+// $fieldset-padding: 2em;
+// $fieldset-margin: 1.5em 0;
+
+
+// $legend-bg: #fff;
+// $legend-font-weight: bold;
+// $legend-padding: em-calc(0 3);
+
+
+//$input-prefix-bg: $colorSecondaryLight;
+//$input-prefix-border-color: $colorSecondaryMedium;
+// $input-prefix-border-size: 1px;
+// $input-prefix-border-type: solid;
+// $input-prefix-overflow: hidden;
+//$input-prefix-font-color: $colorSecondaryDark;
+//$input-prefix-font-color-alt: #fff;
+
+
+// $input-error-message-padding: .5em .25em;
+// $input-error-message-top: 0;
+// $input-error-message-font-size: 1em;
+// $input-error-message-font-weight: bold;
+// $input-error-message-font-color: #fff;
+// $input-error-message-font-color-alt: #333;
+
+
+// $glowing-effect-fade-time: 0.2s;
+// $glowing-effect-color: $input-focus-border-color;
+
+//------------------------------------------------------------------------------------------
+//Foundation 4 components
+
+// Comment out this import if you don't want to use normalize
+@import "normalize";
+
+// Comment out this import if you are customizing you imports below
+// @import "foundation";
+
+// Import specific parts of Foundation by commenting the import "foundation"
+// and uncommenting what you want below. You must uncomment the following if customizing
+
+@import "foundation/components/global"; // *always required
+@import "foundation/components/grid";
+
+//
+// Use this grid if you want to start using the new Foundation 5 grid early.
+// It will change breakpoints to min-width: 640px and 1024px.
+//
+// @import "foundation/components/grid-5";
+//
+
+@import "foundation/components/buttons";
+@import "foundation/components/forms"; // *requires components/buttons
+@import "foundation/components/custom-forms"; // *requires components/buttons, components/forms
+@import "foundation/components/button-groups"; // *requires components/buttons
+@import "foundation/components/dropdown-buttons"; // *requires components/buttons
+@import "foundation/components/split-buttons"; // *requires components/buttons
+@import "foundation/components/dropdown";
+@import "foundation/components/tooltips";
+// @import "foundation/components/section";
+@import "foundation/components/magellan";
+@import "foundation/components/reveal";
+@import "foundation/components/pagination";
+
+
+// @import "foundation/components/visibility";
+// @import "foundation/components/block-grid";
+// @import "foundation/components/type";
+// @import "foundation/components/buttons";
+// @import "foundation/components/forms"; // *requires components/buttons
+// @import "foundation/components/custom-forms"; // *requires components/buttons, components/forms
+// @import "foundation/components/button-groups"; // *requires components/buttons
+// @import "foundation/components/dropdown-buttons"; // *requires components/buttons
+// @import "foundation/components/split-buttons"; // *requires components/buttons
+// @import "foundation/components/dropdown";
+// @import "foundation/components/flex-video";
+// @import "foundation/components/section";
+// @import "foundation/components/top-bar";  // *requires components/grid
+// @import "foundation/components/orbit";
+// @import "foundation/components/reveal";
+// @import "foundation/components/joyride";
+// @import "foundation/components/clearing";
+// @import "foundation/components/alert-boxes";
+// @import "foundation/components/breadcrumbs";
+// @import "foundation/components/keystrokes";
+// @import "foundation/components/labels";
+// @import "foundation/components/inline-lists";
+// @import "foundation/components/pagination";
+// @import "foundation/components/panels";
+// @import "foundation/components/pricing-tables";
+// @import "foundation/components/progress-bars";
+// @import "foundation/components/side-nav";
+// @import "foundation/components/sub-nav";
+// @import "foundation/components/switch";
+// @import "foundation/components/magellan";
+// @import "foundation/components/tables";
+// @import "foundation/components/thumbs";
+// @import "foundation/components/tooltips";
+
+// Other components and plugins
+//@import "plugins/jquery.timepicker.css";
+//@import "plugins/foundation-datepicker.css";
+//@import "plugins/chosen.min.css";
