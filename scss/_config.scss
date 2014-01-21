@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 //
-// The configration file for Brugge | v0.5
+// Brugge variables
 //
-// -Grid
+// -Required
 // -General
 // -Layout
 // -Fonts
@@ -18,15 +18,53 @@
 
 ///////////////////////////////////////////////////////////////////////////////
 //
-//									Grid
+//									Required
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-$row-width: 1020px;					// the width of the content ( #main )
-$main-column-width: 720px;			// the width of the main column
-$column-gutter: 20px;					// we don't use default gutter variable
-$custom-gutter: 20px;				// this is our custom gutter variable
-$total-columns: 17;				// 25 * 2 * 3 = 150 columns ( for 720/1000, 1000 in lowest terms is 25 )
+$baseFontsize:						14;
+$base-font-size: 					$baseFontsize / 16 * 100%;
+$em-base: 							$baseFontsize;
+
+// It strips the unit of measure and returns it
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+// Converts "px" to "em" using the ($)em-base
+@function convert-to-em($value, $base-value: $em-base)  {
+  $value: strip-unit($value) / strip-unit($base-value) * 1em;
+  @if ($value == 0em) { $value: 0; } // Turn 0em into 0
+  @return $value;
+}
+
+// Working in ems is annoying. Think in pixels by using this handy function, em-calc(#)
+// Just enter the number, no need to mention "px"
+@function em-calc($values, $base-value: $em-base) {
+  $max: length($values); // Get the total number of parameters passed
+
+  // If there is only 1 parameter, then return it as an integer.
+  // This is done because a list can't be multiplied or divided even if it contains a single value
+  @if $max == 1 { @return convert-to-em(nth($values, 1), $base-value); }
+
+  $emValues: (); // This will eventually store the converted $values in a list
+  @for $i from 1 through $max {
+    $emValues: append($emValues, convert-to-em(nth($values, $i), $base-value));
+  }
+  @return $emValues;
+}
+
+//Retaining this for backward compatability
+
+@function emCalc($pxWidth) {
+  @return $pxWidth / $em-base * 1em;
+}
+
+// Maybe you want to create rems with pixels
+// $rem-base: 0.625 !default; //Set the value corresponding to body font size. In this case, you should set as: body {font-size: 62.5%;}
+// @function rem-calc($pxWidth) {
+//   @return $pxWidth / $rem-base * 1rem;
+// }
 
 
 
@@ -38,7 +76,7 @@ $total-columns: 17;				// 25 * 2 * 3 = 150 columns ( for 720/1000, 1000 in lowes
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-$body-bg: #e7e7e7;
+$bodyBg: #e7e7e7;
 
 
 
@@ -50,9 +88,9 @@ $body-bg: #e7e7e7;
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-$header-height: 80px;				// height of the header
-$menu-height: 40px;					// height of the navigation menu
-$inner-padding: 15px;				// blocks' padding
+$headerHeight: 80px;				// height of the header
+$menuHeight: 40px;					// height of the navigation menu
+$innerPadding: 15px;				// blocks' padding
 
 
 
@@ -64,14 +102,107 @@ $inner-padding: 15px;				// blocks' padding
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-//web font here #WIP
+@font-face {
+    font-family: 'avenir_lt_pro45_book';
+    src: url('../fonts/linotype_-_avenirltpro-book-webfont.eot');
+    src: url('../fonts/linotype_-_avenirltpro-book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/linotype_-_avenirltpro-book-webfont.woff') format('woff'),
+         url('../fonts/linotype_-_avenirltpro-book-webfont.ttf') format('truetype'),
+         url('../fonts/linotype_-_avenirltpro-book-webfont.svg#avenir_lt_pro45_book') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
-// Font sizes. Main font-size is used as a base for whitespace to maintain rythm
-$globalFontsize: 12;
-$globalWhitespace: 12 * 1px; //use times 1/4, 1/2, 1, 2, 4, etc.
-$body-font-color: #222;
-$body-font-weight: normal;
-$body-font-style: normal;
+
+@font-face {
+    font-family: 'avenir_lt_pro55_roman';
+    src: url('../fonts/linotype_-_avenirltpro-roman-webfont.eot');
+    src: url('../fonts/linotype_-_avenirltpro-roman-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/linotype_-_avenirltpro-roman-webfont.woff') format('woff'),
+         url('../fonts/linotype_-_avenirltpro-roman-webfont.ttf') format('truetype'),
+         url('../fonts/linotype_-_avenirltpro-roman-webfont.svg#avenir_lt_pro55_roman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'avenir_lt_pro85_heavy';
+    src: url('../fonts/linotype_-_avenirltpro-heavy-webfont.eot');
+    src: url('../fonts/linotype_-_avenirltpro-heavy-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/linotype_-_avenirltpro-heavy-webfont.woff') format('woff'),
+         url('../fonts/linotype_-_avenirltpro-heavy-webfont.ttf') format('truetype'),
+         url('../fonts/linotype_-_avenirltpro-heavy-webfont.svg#avenir_lt_pro85_heavy') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'avenir_lt_pro65_medium';
+    src: url('../fonts/linotype_-_avenirltpro-medium-webfont.eot');
+    src: url('../fonts/linotype_-_avenirltpro-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/linotype_-_avenirltpro-medium-webfont.woff') format('woff'),
+         url('../fonts/linotype_-_avenirltpro-medium-webfont.ttf') format('truetype'),
+         url('../fonts/linotype_-_avenirltpro-medium-webfont.svg#avenir_lt_pro65_medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'avenir_lt_pro95_black';
+    src: url('../fonts/linotype_-_avenirltpro-black-webfont.eot');
+    src: url('../fonts/linotype_-_avenirltpro-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/linotype_-_avenirltpro-black-webfont.woff') format('woff'),
+         url('../fonts/linotype_-_avenirltpro-black-webfont.ttf') format('truetype'),
+         url('../fonts/linotype_-_avenirltpro-black-webfont.svg#avenir_lt_pro95_black') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'century_schoolbook_proregular';
+    src: url('../fonts/monotype__-_centuryschoolbookpro-webfont.eot');
+    src: url('../fonts/monotype__-_centuryschoolbookpro-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/monotype__-_centuryschoolbookpro-webfont.woff') format('woff'),
+         url('../fonts/monotype__-_centuryschoolbookpro-webfont.ttf') format('truetype'),
+         url('../fonts/monotype__-_centuryschoolbookpro-webfont.svg#century_schoolbook_proregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'century_schoolbook_probold';
+    src: url('../fonts/monotype__-_centuryschoolbookpro-bold-webfont.eot');
+    src: url('../fonts/monotype__-_centuryschoolbookpro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/monotype__-_centuryschoolbookpro-bold-webfont.woff') format('woff'),
+         url('../fonts/monotype__-_centuryschoolbookpro-bold-webfont.ttf') format('truetype'),
+         url('../fonts/monotype__-_centuryschoolbookpro-bold-webfont.svg#century_schoolbook_probold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'century_schoolbook_proitalic';
+    src: url('../fonts/monotype__-_centuryschoolbookpro-italic-webfont.eot');
+    src: url('../fonts/monotype__-_centuryschoolbookpro-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/monotype__-_centuryschoolbookpro-italic-webfont.woff') format('woff'),
+         url('../fonts/monotype__-_centuryschoolbookpro-italic-webfont.ttf') format('truetype'),
+         url('../fonts/monotype__-_centuryschoolbookpro-italic-webfont.svg#century_schoolbook_proitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+$h1Fontsize:		32px;
+$h2Fontsize:		26px;
+$h3Fontsize:		22px;
+$h4Fontsize:		19px;
+$h5Fontsize:		16px;
 
 
 
@@ -83,14 +214,21 @@ $body-font-style: normal;
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-$color-l: 				#32b498; 			// Links, buttons, highlight area
-$color-h:				#292929;			// calendarBg, footer
-$color-f:				#999;				// footer font, border
-$color-b:				#fff;				// normal blocks bgColor
-$color-m:     			#fe0000;			// mainmenu
-$color-t:				#000;				// normal text color
-$color-t-a:				#fff;				// text alternative
+$colorPrime:			#32b498;			// Primary color, used for Links, buttons, highlight etc.
+$colorNav:				#ff0000;			// navigation menu bg color
+$colorContext:			#009ce7;			// context color
+$colorSub:				#ff5600;			// extral link color
 
+// grayscale colors
+ $colorGrayScaleA:		#000;				// Headings color, some border color
+ $colorGrayScaleB:		#282828;			// Block header bg color
+  $colorGrayScaleBAlt: rgba(40, 40, 40, .9);	// footer bg color
+ $colorGrayScaleC:		#333;				// Paragraph text color
+ $colorGrayScaleD:		#666;
+ $colorGrayScaleE:		#999;				// Homepage block text color
+ $colorGrayScaleF:		#ccc;				// Homepage block text color
+ $colorGrayScaleG:		#fff;				// Homepage block text color
+	
 
 
 
@@ -136,9 +274,16 @@ $color-t-a:				#fff;				// text alternative
 @mixin globalTextShadow 								{ text-shadow: 0 0 6px rgba(0,0,0,.2); }
 @mixin ellipsis 										{ display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 @mixin textReplace 										{ display: block; text-indent: -9999px; overflow: hidden; }
-@mixin visuallyhidden									{ border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+@mixin visuallyHidden									{ border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
 @mixin clearfix {
 	&:before,
 	&:after { content: " "; display: table; }
 	&:after { clear: both; }
 }
+
+@mixin textSelectionColor ($color: #ade1d6) {
+	&::selection { background: $color; }
+	&::-moz-selection { background: $color; }
+}
+
+

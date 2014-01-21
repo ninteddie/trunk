@@ -1,81 +1,131 @@
-@import "_config.scss";
-@import "_config-external.scss";
+/* Concertgebouw Brugge */
+
+@import "config";
+@import "config-external";
+
 /******************************************************************************
-* GENERAL styles
+*
+* GENERAL
+*
 ******************************************************************************/
-#lanuge-switch {
-	span {
-		@include visuallyhidden;
-	}
+
+// Grid override
+ .large-half							{ width: 50%; }
+ .large-one-third						{ width: 33.333333%; }
+ .large-one-fourth						{ width: 25%; }
+
+// noscreen
+ .noscr,
+ #languageSwitcher span					{ @include visuallyHidden; }
+
+.innerWrapper {
+	background-color: $colorGrayScaleG;
+	margin-bottom: $column-gutter;
+	padding: $innerPadding;
+
+	h2									{ margin: 0; }
 }
 
 
-.large-half {
-	width: 50%;
-}
 
-.large-one-third {
-	width: 33.3333%;
-}
 
-.large-one-fourth {
-	width: 25%;
-}
 
-.inner-wrapper {
-		background-color: $color-b;
-		margin-bottom: $custom-gutter;
-		padding: $inner-padding;
+/******************************************************************************
+*
+* TYPOGRAPHY
+*
+******************************************************************************/
 
-		h2 {
-			margin: 0;
-		}
-	}
+// logo
+ #logoAnchor							{ text-transform: uppercase; }
+ #logoAnchor h1							{ font-family: "avenir_lt_pro95_black"; font-size: em-calc($h2Fontsize); line-height: 1; }
+ #logoAnchor span						{ font-family: "avenir_lt_pro65_medium"; }
 
-.main-column {
-	background-color: transparent;
-}
+// headings
+ h1										{ line-height: 1.1875; }
+ h2										{ line-height: 1.1923; }
+ h3										{ line-height: 1.1818; }
+ h4										{ line-height: 1.2105; }
+ h5										{ line-height: 1.25; }
+
+
+
+
+
+/******************************************************************************
+*
+* LAYOUT
+*
+******************************************************************************/
 
 /* header */
 #header {
 	width: 100%;
-	height: $header-height;
+	height: $headerHeight;
 	position: fixed;
-	background-color: $color-b;
+	background-color: $colorGrayScaleG;
 	z-index: 2;
 }
 
-#logoAnchor h2 {
-	color: $color-t;
-	font-weight: bold;
-	text-transform: uppercase;
+#userPanel {
+	& > section { position: absolute; }
 
-	span {
-		font-weight: normal;
+	.inline-list {
+		margin: 0;
+
+		li { margin: 0; }
 	}
 }
+
+#languageSwitcher {
+	$posHelper:				5px;
+
+	top: 10px;
+	right: $posHelper;
+
+	li + li					{ border-left: #000 1px solid; }
+	a						{ line-height: 1; padding: 0 $posHelper; }
+}
+
+#socialMedia				{ top: 30px; right: 10px; }
+#cartAndWishlist			{ width: 180px; height: 60px; right: 100px; }
+
+#winkelkarTitle,
+#verlanglijstTitle			{ width: 180px; height: 30px; position: absolute; border: #000 1px solid; border-top: none; }
+
+#winkelkarTitle				{ top: 0; }
+#verlanglijstTitle			{ bottom: 0; }
+
+#userName					{ min-width: 180px; }
+
 /*****************************************************************************/
 
 /* main */
 #main {
-	padding-top: $header-height + $menu-height;
+	padding-top: $headerHeight + $menuHeight;
 }
+
+.concertList,
+.newsItemList {
+	list-style: none;
+	padding: 0;
+}
+
 /*****************************************************************************/
 
 
 /* footer */
 #footer {
 	width: 100%;
-	background-color: #010101;
-	color: $color-f;
+	color: $colorGrayScaleE;
 	
 
-	.footer-wrapper {
+	.footerWrapper {
 		padding-top: 30px;
-		background: transparent url(../img/footer-bg.gif) 0 0 repeat;
+		background: $colorGrayScaleBAlt;
 
-		.footer-last {
-			padding-right: $custom-gutter * 3;
+		.footerLast {
+			padding-right: $column-gutter * 3;
 		}
 
 	}
@@ -84,34 +134,37 @@
 
 		.columns:first-child {
 
-			.inner-wrapper {
+			.innerWrapper {
 				border-top: none;
 			}
 		}
 
 		.columns:last-child {
 			
-			.inner-wrapper {
-				border-bottom: $color-f 1px solid;
+			.innerWrapper {
+				border-bottom: $colorGrayScaleE 1px solid;
 			}
 		}
 	}
 
-	.inner-wrapper {
+	.innerWrapper {
 		padding-top: 10px;
 		padding-left: 0;
-		border-top: $color-f 1px solid;
+		border-top: $colorGrayScaleE 1px solid;
 		background: inherit;
 	}
 }
 
-#toggle-footer {
-	.inner-wrapper {
+#toggleFooter {
+	background-color: $colorGrayScaleA;
+
+	.innerWrapper {
 		margin-bottom: 0;
 		border-top: none;
 	}
 }
 
 /*****************************************************************************/
-
 @import "_breakpoints.scss";
+
+
