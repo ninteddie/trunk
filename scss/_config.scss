@@ -22,7 +22,7 @@
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-$baseFontsize:						14;
+$baseFontsize:						16;
 $base-font-size: 					$baseFontsize / 16 * 100%;
 $em-base: 							$baseFontsize;
 
@@ -91,6 +91,10 @@ $bodyBg: #e7e7e7;
 $headerHeight: 80px;				// height of the header
 $menuHeight: 40px;					// height of the navigation menu
 $innerPadding: 15px;				// blocks' padding
+
+$headerDropdownTitleWidth: 180px;   // #winkelkarTitle, #verlanglijstTitle width
+$headerDropdownWidth: 270px;        // #winkelkar, #verlanglijst dropdown width
+$headerDropdownHeight: auto;        // #winkelkar, #verlanglijst dropdown height
 
 
 
@@ -198,11 +202,18 @@ $innerPadding: 15px;				// blocks' padding
 }
 
 
+$logoFontsize:      23px;
 $h1Fontsize:		32px;
 $h2Fontsize:		26px;
 $h3Fontsize:		22px;
 $h4Fontsize:		19px;
 $h5Fontsize:		16px;
+
+$pFontsize:         16px;
+$qFontsize:         20px;
+$introFontsize:     20px;
+$smallFontsize:     13px;
+
 
 
 

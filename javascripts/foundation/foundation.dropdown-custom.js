@@ -82,11 +82,14 @@
 
     close: function (dropdown) {
       var self = this;
+
       dropdown.each(function () {
         if ($(this).hasClass(self.settings.activeClass)) {
           $(this)
-            .css(Foundation.rtl ? 'right':'left', '-99999px')
+            //.css(Foundation.rtl ? 'right':'left', '-99999px')
+            .css(Foundation.rtl ? 'left':'right', '-99999px')         // hacked
             .removeClass(self.settings.activeClass);
+          $('[data-dropdown]').removeClass(self.settings.activeClass); // remove activeClass from all the title
           $(this).trigger('closed');
         }
       });
@@ -96,6 +99,7 @@
         this
           .css(dropdown
             .addClass(this.settings.activeClass), target);
+          target.addClass(this.settings.activeClass);                 // now the title user click also has activeClass
         dropdown.trigger('opened');
     },
 
@@ -142,7 +146,8 @@
           'max-width': 'none',
           top: position.top + this.outerHeight(target)
         });
-        dropdown.css(Foundation.rtl ? 'right':'left', '2.5%');
+        //dropdown.css(Foundation.rtl ? 'right':'left', '2.5%');
+        dropdown.css(Foundation.rtl ? 'left':'right', '2.5%');          // hacked
       } else {
         if (!Foundation.rtl && $(window).width() > this.outerWidth(dropdown) + target.offset().left && !this.data_options(target).align_right) {
           var left = position.left;

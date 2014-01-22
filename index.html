@@ -40,7 +40,7 @@
 					<section id="profile">
 						<h3 class="noscr">Profile @check the name/spell</h3>
 
-						<a href="#" data-dropdown="userName">~!User name</a>
+						<a id="userNameTitle" href="#" data-dropdown="userName">~!User name</a>
 						<ul id="userName" class="f-dropdown" data-dropdown-content>
 							<li><a href="#">Mijn voorkeuren</a></li>
 							<li><a href="#">Instellingen</a></li>
@@ -54,18 +54,32 @@
 					<section id="cartAndWishlist">
 						<h3 class="noscr">Winkelkar &amp; Verlanglijst @check the name/spell</h3>
 
-						<a id="winkelkarTitle" href="#" data-dropdown="winkelkar">winkelkar</a>
+						<a id="winkelkarTitle" class="hasItem" href="#" data-dropdown="winkelkar">
+							<span>Your </span>winkelkar<span> has </span><b class="itemNumber">3</b><span> item(s)</span><!-- @check the name/spell -->
+						</a>
 						<ul id="winkelkar" class="f-dropdown content" data-dropdown-content>
-							<li><a href="#">This is a link</a></li>
-							<li><a href="#">This is another</a></li>
-							<li><a href="#">Yet another</a></li>
+							<li><a href="#">
+								<time datetime="2014-11-22">Wo 22.11.14 / 15:00</time>
+								<span class="title">BOOM</span>
+								<span class="artist">Dr. Strangelove Company</span>
+							</a></li>
+							<li><a href="#">
+								<time datetime="2014-11-22">Wo 22.11.14 / 15:00</time>
+								<span class="title">BOOM</span>
+								<span class="artist">Dr. Strangelove Company</span>
+							</a></li>
+							<li><a href="#">
+								<time datetime="2014-11-22">Wo 22.11.14 / 15:00</time>
+								<span class="title">BOOM</span>
+								<span class="artist">Dr. Strangelove Company</span>
+							</a></li>
 						</ul>
 
-						<a id="verlanglijstTitle" href="#" data-dropdown="verlanglijst">verlanglijst</a>
+						<a id="verlanglijstTitle" class="hasNoItem" href="#" data-dropdown="verlanglijst">
+							<span>Your </span>verlanglijst<span> has </span><b class="itemNumber">0</b><span> item(s)</span><!-- @check the name/spell -->
+						</a>
 						<ul id="verlanglijst" class="f-dropdown content" data-dropdown-content>
-							<li><a href="#">This is a link</a></li>
-							<li><a href="#">This is another</a></li>
-							<li><a href="#">Yet another</a></li>
+							<li>There's no item @check the name/spell</li>
 						</ul>
 
 					</section>
@@ -74,9 +88,9 @@
 						<h3 class="noscr">Social media @check the name/spell</h3>
 
 						<ul class="inline-list">
-							<li><a href="~!">Youtube</a></li>
-							<li><a href="~!">Facebook</a></li>
-							<li><a href="~!">Twitter</a></li>
+							<li><a href="~!"><span>Youtube</span></a></li>
+							<li><a href="~!"><span>Facebook</span></a></li>
+							<li><a href="~!"><span>Twitter</span></a></li>
 						</ul>
 					</section>
 				</section>
@@ -270,7 +284,7 @@
 	<script src="javascripts/foundation/foundation.alerts.js"></script>
 	<script src="javascripts/foundation/foundation.clearing.js"></script>
 	<script src="javascripts/foundation/foundation.cookie.js"></script>
-	<script src="javascripts/foundation/foundation.dropdown.js"></script>
+	<script src="javascripts/foundation/foundation.dropdown-custom.js"></script>
 	<script src="javascripts/foundation/foundation.forms.js"></script>
 	<script src="javascripts/foundation/foundation.interchange.js"></script>
 	<script src="javascripts/foundation/foundation.joyride.js"></script>

@@ -14,9 +14,18 @@
  .large-one-third						{ width: 33.333333%; }
  .large-one-fourth						{ width: 25%; }
 
+// anchor
+ a:link,
+ a:visited								{ color: $colorPrime; }
+ a:hover								{ color: $colorGrayScaleD; }
+ a:active								{ color: $colorNav; }
+
 // noscreen
  .noscr,
- #languageSwitcher span					{ @include visuallyHidden; }
+ #languageSwitcher span,
+ #winkelkarTitle span,
+#verlanglijstTitle span,
+/*#socialMedia span*/						{ @include visuallyHidden; }
 
 .innerWrapper {
 	background-color: $colorGrayScaleG;
@@ -38,8 +47,13 @@
 
 // logo
  #logoAnchor							{ text-transform: uppercase; }
- #logoAnchor h1							{ font-family: "avenir_lt_pro95_black"; font-size: em-calc($h2Fontsize); line-height: 1; }
+ #logoAnchor h1							{ font-family: "avenir_lt_pro95_black"; font-size: $logoFontsize; letter-spacing: 1px; line-height: 1; padding-top: ($headerHeight - $logoFontsize)/2; }
  #logoAnchor span						{ font-family: "avenir_lt_pro65_medium"; }
+ #userPanel a							{ font-family: "avenir_lt_pro85_heavy"; font-size: $smallFontsize;  }
+ #languageSwitcher						{ font-size: 12px; }
+ #cartAndWishlist time					{ font-family: "avenir_lt_pro95_black"; font-size: 12px; line-height: 1.2; color: $colorGrayScaleA; }
+ #cartAndWishlist .title				{ font-family: "avenir_lt_pro85_heavy"; font-size: 15px; line-height: 1.2; color: $colorGrayScaleA; }
+ #cartAndWishlist .artist				{ font-family: "avenir_lt_pro85_heavy"; font-size: $smallFontsize; line-height: 1.2; color: $colorGrayScaleD; }
 
 // headings
  h1										{ line-height: 1.1875; }
@@ -68,7 +82,11 @@
 }
 
 #userPanel {
-	& > section { position: absolute; }
+	font-size: $smallFontsize;
+	@include clearfix;
+
+	& > section { @include clearfix; }
+	a { display: block; }
 
 	.inline-list {
 		margin: 0;
@@ -77,26 +95,85 @@
 	}
 }
 
-#languageSwitcher {
-	$posHelper:				5px;
+#profile,
+#cartAndWishlist			{ position: absolute; top: 0; }
 
-	top: 10px;
-	right: $posHelper;
+#cartAndWishlist			{
+	right: 100px;
 
-	li + li					{ border-left: #000 1px solid; }
-	a						{ line-height: 1; padding: 0 $posHelper; }
+	li						{ width: 200px; padding: 10px 0; }
+	li + li					{ border-top: $colorGrayScaleD 1px solid; }
+
+	.title,
+	.artist					{ display: block; }
+
+	time					{  }
+	.title					{  }
+	.artist					{  }
 }
 
-#socialMedia				{ top: 30px; right: 10px; }
-#cartAndWishlist			{ width: 180px; height: 60px; right: 100px; }
+#languageSwitcher ul,
+#socialMedia ul				{ float: right; }
+
+#winkelkar,
+#verlanglijst				{
+	width: $headerDropdownWidth;
+	right: 0;
+	left: auto !important;	// dropdown.js hack | check js before changing it
+}
+
 
 #winkelkarTitle,
-#verlanglijstTitle			{ width: 180px; height: 30px; position: absolute; border: #000 1px solid; border-top: none; }
+#winkelkarTitle.hasNoItem:before,
+#winkelkarTitle.hasNoItem .itemNumber			{ color: $colorPrime; }
+#verlanglijstTitle,
+#verlanglijstTitle.hasNoItem:before,
+#verlanglijstTitle.hasNoItem .itemNumber		{ color: $colorNav; }
 
-#winkelkarTitle				{ top: 0; }
-#verlanglijstTitle			{ bottom: 0; }
+#winkelkarTitle,
+#verlanglijstTitle			{
+	border: $colorGrayScaleF 1px solid;
+	border-top: none;
+	&:before				{ width: 29px; height: 29px; line-height: 29px; content: "@i"; display: inline-block; text-align: center;  }
+
+	.itemNumber				{ width: 29px; height: 29px; line-height: 29px; float: right; margin-left: 43px; text-align: center; font-weight: normal; }
+
+	&.hasItem .itemNumber						{ background-color: $colorGrayScaleF; }
+	&.hasItem:hover .itemNumber					{ color: $colorGrayScaleG; background-color: $colorGrayScaleD; }
+	&.hasItem.open .itemNumber					{ color: $colorGrayScaleG; background-color: $colorGrayScaleF; }
+
+	&.hasNoItem:hover							{ color: $colorGrayScaleD; }
+	&.hasNoItem.open							{ color: $colorGrayScaleG; background-color: $colorGrayScaleF; }
+	&.hasNoItem.open:before,
+	&.hasNoItem.open .itemNumber				{ color: $colorGrayScaleG; }
+}
+
+#socialMedia				{
+
+	li						{ width: 20px; height: 20px; }
+	li + li					{ margin-left: 3px !important; }
+
+}
+
+#languageSwitcher {
+	ul						{ margin: 10px -5px 10px 0 !important; }
+	li + li					{ border-left:  $colorGrayScaleE 1px solid; }
+	a						{ line-height: 1; padding: 0 4px; }
+	.selected a				{ color: $colorGrayScaleE; }
+}
+
+
+
+
+
+
+
 
 #userName					{ min-width: 180px; }
+#userNameTitle				{ color: $colorGrayScaleD; }
+
+
+
 
 /*****************************************************************************/
 

@@ -55,6 +55,12 @@
   font-weight: normal;
   font-style: normal; }
 
+/* We use these to controls height and width styles. */
+/* We use this to control the background color */
+/* We use this to set the border styles for dropdowns. */
+/* We use these to style the triangle pip. */
+/* We use these to control styles for the list elements. */
+/* We use this to control the styles for when the dropdown has custom content. */
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -420,7 +426,7 @@ meta.foundation-mq-large {
 
 html,
 body {
-  font-size: 87.5%; }
+  font-size: 100%; }
 
 body {
   background: #e7e7e7;
@@ -1028,11 +1034,11 @@ select {
   max-height: none;
   height: auto;
   background: white;
-  border: solid 1px #cccccc;
-  font-size: 14;
+  border: solid 3px #cccccc;
+  font-size: 16;
   z-index: 99;
-  margin-top: 2px;
-  max-width: 200px; }
+  margin-top: 0;
+  max-width: 270px; }
   .f-dropdown > *:first-child {
     margin-top: 0; }
   .f-dropdown > *:last-child {
@@ -1042,11 +1048,11 @@ select {
     display: block;
     width: 0;
     height: 0;
-    border: inset 6px;
+    border: inset 0;
     border-color: transparent transparent white transparent;
     border-bottom-style: solid;
     position: absolute;
-    top: -12px;
+    top: 0;
     left: 10px;
     z-index: 99; }
   .f-dropdown:after {
@@ -1054,11 +1060,11 @@ select {
     display: block;
     width: 0;
     height: 0;
-    border: inset 7px;
+    border: inset 1;
     border-color: transparent transparent #cccccc transparent;
     border-bottom-style: solid;
     position: absolute;
-    top: -14px;
+    top: -2;
     left: 9px;
     z-index: 98; }
   .f-dropdown.right:before {
@@ -1068,30 +1074,30 @@ select {
     left: auto;
     right: 9px; }
   .f-dropdown li {
-    font-size: 1em;
+    font-size: 0.875em;
     cursor: pointer;
-    line-height: 1.28571em;
+    line-height: 1.125em;
     margin: 0; }
     .f-dropdown li:hover, .f-dropdown li:focus {
       background: #eeeeee; }
     .f-dropdown li a {
       display: block;
-      padding: 0.5em;
+      padding: 0;
       color: #555555; }
   .f-dropdown.content {
     position: absolute;
     top: -9999px;
     list-style: none;
     margin-left: 0;
-    padding: 1.42857em;
+    padding: 0 10px;
     width: 100%;
     height: auto;
     max-height: none;
     background: white;
-    border: solid 1px #cccccc;
-    font-size: 14;
+    border: solid 3px #cccccc;
+    font-size: 16;
     z-index: 99;
-    max-width: 200px; }
+    max-width: 270px; }
     .f-dropdown.content > *:first-child {
       margin-top: 0; }
     .f-dropdown.content > *:last-child {
@@ -1107,8 +1113,8 @@ select {
 
 /* Inline Lists */
 .inline-list {
-  margin: 0 auto 1.21429em auto;
-  margin-left: -1.57143em;
+  margin: 0 auto 1.0625em auto;
+  margin-left: -1.375em;
   margin-right: 0;
   padding: 0;
   list-style: none;
@@ -1116,13 +1122,13 @@ select {
   .inline-list > li {
     list-style: none;
     float: left;
-    margin-left: 1.57143em;
+    margin-left: 1.375em;
     display: block; }
     .inline-list > li > * {
       display: block; }
 
 p.lead {
-  font-size: 1.25em;
+  font-size: 1.21875em;
   line-height: 1.6; }
 
 .subheader {
@@ -1172,10 +1178,10 @@ p {
   font-weight: normal;
   font-size: 1em;
   line-height: 1.6;
-  margin-bottom: 1.42857em;
+  margin-bottom: 1.25em;
   text-rendering: optimizeLegibility; }
   p aside {
-    font-size: 1em;
+    font-size: 0.875em;
     line-height: 1.35;
     font-style: italic; }
 
@@ -1188,26 +1194,26 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
   margin-top: 0;
   margin-bottom: 0;
-  line-height: 1.18571em; }
+  line-height: 1.2125em; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
     font-size: 60%;
     color: #4d4d4d;
     line-height: 0; }
 
 h1 {
-  font-size: 1.57143em; }
+  font-size: 1.375em; }
 
 h2 {
-  font-size: 1.14286em; }
-
-h3 {
-  font-size: 1.21429em; }
-
-h4 {
   font-size: 1em; }
 
+h3 {
+  font-size: 1.0625em; }
+
+h4 {
+  font-size: 0.875em; }
+
 h5 {
-  font-size: 1.14286em; }
+  font-size: 1em; }
 
 h6 {
   font-size: 1em; }
@@ -1216,7 +1222,7 @@ hr {
   border: solid #dddddd;
   border-width: 1px 0 0;
   clear: both;
-  margin: 1.42857em 0 1.35714em;
+  margin: 1.25em 0 1.1875em;
   height: 0; }
 
 /* Helpful Typography Defaults */
@@ -1245,7 +1251,7 @@ ol,
 dl {
   font-size: 1em;
   line-height: 1.6;
-  margin-bottom: 1.42857em;
+  margin-bottom: 1.25em;
   list-style-position: outside;
   font-family: inherit; }
 
@@ -1257,7 +1263,7 @@ ul, ol {
 /* Unordered Lists */
 ul li ul,
 ul li ol {
-  margin-left: 1.42857em;
+  margin-left: 1.25em;
   margin-bottom: 0;
   font-size: 1em;
   /* Override nested font-size change */ }
@@ -1275,7 +1281,7 @@ ul.no-bullet {
 /* Ordered Lists */
 ol li ul,
 ol li ol {
-  margin-left: 1.42857em;
+  margin-left: 1.25em;
   margin-bottom: 0; }
 
 /* Definition Lists */
@@ -1283,7 +1289,7 @@ dl dt {
   margin-bottom: 0.3em;
   font-weight: bold; }
 dl dd {
-  margin-bottom: 0.85714em; }
+  margin-bottom: 0.75em; }
 
 /* Abbreviations */
 abbr,
@@ -1299,12 +1305,12 @@ abbr {
 
 /* Blockquotes */
 blockquote {
-  margin: 0 0 1.42857em;
-  padding: 0.64286em 1.42857em 0 1.35714em;
+  margin: 0 0 1.25em;
+  padding: 0.5625em 1.25em 0 1.1875em;
   border-left: 1px solid #dddddd; }
   blockquote cite {
     display: block;
-    font-size: 0.92857em;
+    font-size: 0.8125em;
     color: #333333; }
     blockquote cite:before {
       content: "\2014 \0020"; }
@@ -1320,15 +1326,15 @@ blockquote p {
 /* Microformats */
 .vcard {
   display: inline-block;
-  margin: 0 0 1.42857em 0;
+  margin: 0 0 1.25em 0;
   border: 1px solid #dddddd;
-  padding: 0.71429em 0.85714em; }
+  padding: 0.625em 0.75em; }
   .vcard li {
     margin: 0;
     display: block; }
   .vcard .fn {
     font-weight: bold;
-    font-size: 1.07143em; }
+    font-size: 0.9375em; }
 
 .vevent .summary {
   font-weight: bold; }
@@ -1337,23 +1343,23 @@ blockquote p {
   text-decoration: none;
   font-weight: bold;
   border: none;
-  padding: 0 0.07143em; }
+  padding: 0 0.0625em; }
 
 @media only screen and (min-width: 768px) {
   h1, h2, h3, h4, h5, h6 {
     line-height: 1.4; }
 
   h1 {
-    font-size: 2.28571em; }
+    font-size: 2em; }
 
   h2 {
-    font-size: 1.85714em; }
+    font-size: 1.625em; }
 
   h3 {
-    font-size: 1.57143em; }
+    font-size: 1.375em; }
 
   h4 {
-    font-size: 1.35714em; } }
+    font-size: 1.1875em; } }
 /*
  * Print styles.
  *
@@ -1440,8 +1446,20 @@ blockquote p {
 .large-one-fourth {
   width: 25%; }
 
+a:link,
+a:visited {
+  color: #32b498; }
+
+a:hover {
+  color: #666666; }
+
+a:active {
+  color: red; }
+
 .noscr,
-#languageSwitcher span {
+#languageSwitcher span,
+#winkelkarTitle span,
+#verlanglijstTitle span {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -1468,11 +1486,38 @@ blockquote p {
 
 #logoAnchor h1 {
   font-family: "avenir_lt_pro95_black";
-  font-size: 1.85714em;
-  line-height: 1; }
+  font-size: 23px;
+  letter-spacing: 1px;
+  line-height: 1;
+  padding-top: 28.5px; }
 
 #logoAnchor span {
   font-family: "avenir_lt_pro65_medium"; }
+
+#userPanel a {
+  font-family: "avenir_lt_pro85_heavy";
+  font-size: 13px; }
+
+#languageSwitcher {
+  font-size: 12px; }
+
+#cartAndWishlist time {
+  font-family: "avenir_lt_pro95_black";
+  font-size: 12px;
+  line-height: 1.2;
+  color: black; }
+
+#cartAndWishlist .title {
+  font-family: "avenir_lt_pro85_heavy";
+  font-size: 15px;
+  line-height: 1.2;
+  color: black; }
+
+#cartAndWishlist .artist {
+  font-family: "avenir_lt_pro85_heavy";
+  font-size: 13px;
+  line-height: 1.2;
+  color: #666666; }
 
 h1 {
   line-height: 1.1875; }
@@ -1502,47 +1547,129 @@ h5 {
   background-color: white;
   z-index: 2; }
 
-#userPanel > section {
-  position: absolute; }
-#userPanel .inline-list {
-  margin: 0; }
-  #userPanel .inline-list li {
+#userPanel {
+  font-size: 13px;
+  *zoom: 1; }
+  #userPanel:before, #userPanel:after {
+    content: " ";
+    display: table; }
+  #userPanel:after {
+    clear: both; }
+  #userPanel > section {
+    *zoom: 1; }
+    #userPanel > section:before, #userPanel > section:after {
+      content: " ";
+      display: table; }
+    #userPanel > section:after {
+      clear: both; }
+  #userPanel a {
+    display: block; }
+  #userPanel .inline-list {
     margin: 0; }
+    #userPanel .inline-list li {
+      margin: 0; }
 
-#languageSwitcher {
-  top: 10px;
-  right: 5px; }
-  #languageSwitcher li + li {
-    border-left: #000 1px solid; }
-  #languageSwitcher a {
-    line-height: 1;
-    padding: 0 5px; }
-
-#socialMedia {
-  top: 30px;
-  right: 10px; }
+#profile,
+#cartAndWishlist {
+  position: absolute;
+  top: 0; }
 
 #cartAndWishlist {
-  width: 180px;
-  height: 60px;
   right: 100px; }
+  #cartAndWishlist li {
+    width: 200px;
+    padding: 10px 0; }
+  #cartAndWishlist li + li {
+    border-top: #666666 1px solid; }
+  #cartAndWishlist .title,
+  #cartAndWishlist .artist {
+    display: block; }
+
+#languageSwitcher ul,
+#socialMedia ul {
+  float: right; }
+
+#winkelkar,
+#verlanglijst {
+  width: 270px;
+  right: 0;
+  left: auto !important; }
+
+#winkelkarTitle,
+#winkelkarTitle.hasNoItem:before,
+#winkelkarTitle.hasNoItem .itemNumber {
+  color: #32b498; }
+
+#verlanglijstTitle,
+#verlanglijstTitle.hasNoItem:before,
+#verlanglijstTitle.hasNoItem .itemNumber {
+  color: red; }
 
 #winkelkarTitle,
 #verlanglijstTitle {
-  width: 180px;
-  height: 30px;
-  position: absolute;
-  border: #000 1px solid;
+  border: #cccccc 1px solid;
   border-top: none; }
+  #winkelkarTitle:before,
+  #verlanglijstTitle:before {
+    width: 29px;
+    height: 29px;
+    line-height: 29px;
+    content: "@i";
+    display: inline-block;
+    text-align: center; }
+  #winkelkarTitle .itemNumber,
+  #verlanglijstTitle .itemNumber {
+    width: 29px;
+    height: 29px;
+    line-height: 29px;
+    float: right;
+    margin-left: 43px;
+    text-align: center;
+    font-weight: normal; }
+  #winkelkarTitle.hasItem .itemNumber,
+  #verlanglijstTitle.hasItem .itemNumber {
+    background-color: #cccccc; }
+  #winkelkarTitle.hasItem:hover .itemNumber,
+  #verlanglijstTitle.hasItem:hover .itemNumber {
+    color: white;
+    background-color: #666666; }
+  #winkelkarTitle.hasItem.open .itemNumber,
+  #verlanglijstTitle.hasItem.open .itemNumber {
+    color: white;
+    background-color: #cccccc; }
+  #winkelkarTitle.hasNoItem:hover,
+  #verlanglijstTitle.hasNoItem:hover {
+    color: #666666; }
+  #winkelkarTitle.hasNoItem.open,
+  #verlanglijstTitle.hasNoItem.open {
+    color: white;
+    background-color: #cccccc; }
+  #winkelkarTitle.hasNoItem.open:before, #winkelkarTitle.hasNoItem.open .itemNumber,
+  #verlanglijstTitle.hasNoItem.open:before,
+  #verlanglijstTitle.hasNoItem.open .itemNumber {
+    color: white; }
 
-#winkelkarTitle {
-  top: 0; }
+#socialMedia li {
+  width: 20px;
+  height: 20px; }
+#socialMedia li + li {
+  margin-left: 3px !important; }
 
-#verlanglijstTitle {
-  bottom: 0; }
+#languageSwitcher ul {
+  margin: 10px -5px 10px 0 !important; }
+#languageSwitcher li + li {
+  border-left: #999999 1px solid; }
+#languageSwitcher a {
+  line-height: 1;
+  padding: 0 4px; }
+#languageSwitcher .selected a {
+  color: #999999; }
 
 #userName {
   min-width: 180px; }
+
+#userNameTitle {
+  color: #666666; }
 
 /*****************************************************************************/
 /* main */
