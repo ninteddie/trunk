@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'icon';
+    src: url('../fonts/concertgebouw.eot');
+    src: url('../fonts/concertgebouw.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/concertgebouw.woff') format('woff'),
+         url('../fonts/concertgebouw.ttf') format('truetype'),
+         url('../fonts/concertgebouw.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$iconSize: 20px; //icons have a base size at which they're pixel perfect (i.e. sharp)
+@mixin iconReset {
+	font-family: 'icon';
+	text-transform: none;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	line-height: 1;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+} //base icon properties according to icomoon
+
+@mixin iconSet($icon) {
+	@if $icon == soundoff		{ content: "\e600"; }
+	@if $icon == sound			{ content: "\e601"; }
+	@if $icon == youtube		{ content: "\e602"; }
+	@if $icon == x20			{ content: "\e603"; }
+	@if $icon == x14			{ content: "\e604"; }
+	@if $icon == vimeo			{ content: "\e605"; }
+	@if $icon == twitter		{ content: "\e606"; }
+	@if $icon == tumblr			{ content: "\e607"; }
+	@if $icon == spotify		{ content: "\e608"; }
+	@if $icon == rss			{ content: "\e609"; }
+	@if $icon == play			{ content: "\e60a"; }
+	@if $icon == pdf			{ content: "\e60b"; }
+	@if $icon == loupe			{ content: "\e60c"; }
+	@if $icon == linkedin		{ content: "\e60d"; }
+	@if $icon == heart			{ content: "\e60e"; }
+	@if $icon == goto			{ content: "\e60f"; }
+	@if $icon == facebook		{ content: "\e610"; }
+	@if $icon == dot			{ content: "\e611"; }
+	@if $icon == chevron20up	{ content: "\e612"; }
+	@if $icon == chevron20right	{ content: "\e613"; }
+	@if $icon == chevron20left	{ content: "\e614"; }
+	@if $icon == chevron20down	{ content: "\e615"; }
+	@if $icon == chevron14up	{ content: "\e616"; }
+	@if $icon == chevron14right	{ content: "\e617"; }
+	@if $icon == chevron14left	{ content: "\e618"; }
+	@if $icon == chevron14down	{ content: "\e619"; }
+	@if $icon == cart			{ content: "\e61a"; }
+	@else { content: "error" }
+}
+
+@mixin icon($icon, $size: 1, $color: inherit, $location: before) {
+	@if $location == before {
+		&:before {
+			@include iconReset;
+			@include iconSet($icon);
+			font-size: $size * $iconSize;
+			color: $color;
+		}
+	} @else if $location == after {
+		&:after {
+			@include iconReset;
+			@include iconSet($icon);
+			font-size: $size * $iconSize;
+			color: $color;
+		}
+	}
+}
+
