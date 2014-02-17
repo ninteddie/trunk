@@ -1,5 +1,3 @@
-/* Eddie: change all the <h5> to <span> so the "back" anchor for mobile version don't creat document outline */
-
 /*jslint unparam: true, browser: true, indent: 2 */
 
 ;(function ($, window, document, undefined) {
@@ -301,16 +299,16 @@
             url = $link.attr('href');
 
         if (self.settings.mobile_show_parent_link && url && url.length > 1) {
-          var $titleLi = $('<li class="title back js-generated"><span><a href="#"></a></span></li><li><a class="parent-link js-generated" href="' + url + '">' + $link.text() +'</a></li>');
+          var $titleLi = $('<li class="title back js-generated"><h5><a href="#"></a></h5></li><li><a class="parent-link js-generated" href="' + url + '">' + $link.text() +'</a></li>');
         } else {
-          var $titleLi = $('<li class="title back js-generated"><span><a href="#"></a></span></li>');
+          var $titleLi = $('<li class="title back js-generated"><h5><a href="#"></a></h5></li>');
         }
 
         // Copy link to subnav
         if (self.settings.custom_back_text == true) {
-          $titleLi.find('span>a').html(self.settings.back_text);
+          $titleLi.find('h5>a').html(self.settings.back_text);
         } else {
-          $titleLi.find('span>a').html('&laquo; ' + $link.html());
+          $titleLi.find('h5>a').html('&laquo; ' + $link.html());
         }
         $dropdown.prepend($titleLi);
       });

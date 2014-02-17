@@ -88,9 +88,12 @@ $bodyBg: #e7e7e7;
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-$headerHeight: 80px;				// height of the header
-$menuHeight: 40px;					// height of the navigation menu
-$innerPadding: 15px;				// blocks' padding
+$mainWrapperMaxWidth: 1000px;
+$mainColumnMaxWidth: 720px;
+$subColumnMaxWidth: 280px;
+$headerHeight: 80px;
+$menuHeight: 40px;
+$innerPadding: 10px;				// blocks' padding
 
 $headerDropdownTitleWidth: 180px;   // #winkelkarTitle, #verlanglijstTitle width
 $headerDropdownWidth: 270px;        // #winkelkar, #verlanglijst dropdown width
@@ -201,18 +204,36 @@ $headerDropdownHeight: auto;        // #winkelkar, #verlanglijst dropdown height
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'concertgebouw_iconfont';
+    src:url('../fonts/concertgebouw.eot');
+    src:url('../fonts/concertgebouw.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/concertgebouw.woff') format('woff'),
+        url('../fonts/concertgebouw.ttf') format('truetype'),
+        url('../fonts/concertgebouw.svg#concertgebouw') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
-$logoFontsize:      23px;
-$h1Fontsize:		32px;
-$h2Fontsize:		26px;
-$h3Fontsize:		22px;
-$h4Fontsize:		19px;
-$h5Fontsize:		16px;
 
-$pFontsize:         16px;
-$qFontsize:         20px;
-$introFontsize:     20px;
-$smallFontsize:     13px;
+$logoFontsize:			23px;
+$navFontsize:			15px;
+$h1Fontsize:			32px;
+$h2Fontsize:			26px;
+$h3Fontsize:			22px;
+$h4Fontsize:			19px;
+$h5Fontsize:			16px;
+
+$pFontsize:				16px;
+$qFontsize:				20px;
+
+$listHeadingFontsize:	20px;
+$listSubFontsize:		16px;
+$listPFontsize:			14px;
+
+$breadcrumbFontsize:	14px;
+$userPanelFontsize:		13px;
+$smallFontsize:			12px;
 
 
 
@@ -230,16 +251,20 @@ $colorNav:				#ff0000;			// navigation menu bg color
 $colorContext:			#009ce7;			// context color
 $colorSub:				#ff5600;			// extral link color
 
+$colorYoutube:			#ff0000;
+$colorFacebook:			#009ce7;
+$colorTwitter:			#80cef3;
+
 // grayscale colors
  $colorGrayScaleA:		#000;				// Headings color, some border color
  $colorGrayScaleB:		#282828;			// Block header bg color
-  $colorGrayScaleBAlt: rgba(40, 40, 40, .9);	// footer bg color
+ $colorGrayScaleBAlt: rgba(40, 40, 40, .9);	// footer bg color
  $colorGrayScaleC:		#333;				// Paragraph text color
  $colorGrayScaleD:		#666;
  $colorGrayScaleE:		#999;				// Homepage block text color
  $colorGrayScaleF:		#ccc;				// Homepage block text color
  $colorGrayScaleG:		#fff;				// Homepage block text color
-	
+
 
 
 
@@ -250,7 +275,70 @@ $colorSub:				#ff5600;			// extral link color
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-//iconfont here
+$iconSize: 20px;                            //icons have a base size at which they're pixel perfect (i.e. sharp)
+
+//base icon properties according to icomoon
+@mixin iconReset {
+    font-family: 'concertgebouw_iconfont';
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin iconSet($icon) {
+    @if      $icon == soundoff          { content: "\e600"; }
+    @else if $icon == sound             { content: "\e601"; }
+    @else if $icon == youtube           { content: "\e602"; }
+    @else if $icon == x20               { content: "\e603"; }
+    @else if $icon == x14               { content: "\e604"; }
+    @else if $icon == vimeo             { content: "\e605"; }
+    @else if $icon == twitter           { content: "\e606"; }
+    @else if $icon == tumblr            { content: "\e607"; }
+    @else if $icon == spotify           { content: "\e608"; }
+    @else if $icon == rss               { content: "\e609"; }
+    @else if $icon == play              { content: "\e60a"; }
+    @else if $icon == pdf               { content: "\e60b"; }
+    @else if $icon == loupe             { content: "\e60c"; }
+    @else if $icon == linkedin          { content: "\e60d"; }
+    @else if $icon == heart             { content: "\e60e"; }
+    @else if $icon == goto              { content: "\e60f"; }
+    @else if $icon == facebook          { content: "\e610"; }
+    @else if $icon == dot               { content: "\e611"; }
+    @else if $icon == chevron20up       { content: "\e612"; }
+    @else if $icon == chevron20right    { content: "\e613"; }
+    @else if $icon == chevron20left     { content: "\e614"; }
+    @else if $icon == chevron20down     { content: "\e615"; }
+    @else if $icon == chevron14up       { content: "\e616"; }
+    @else if $icon == chevron14right    { content: "\e617"; }
+    @else if $icon == chevron14left     { content: "\e618"; }
+    @else if $icon == chevron14down     { content: "\e619"; }
+    @else if $icon == cart              { content: "\e61a"; }
+    @else if $icon == required          { content: "*"; }
+    @else { content: "error" }
+}
+
+@mixin icon($icon, $size: 1, $color: inherit, $location: before) {
+    @if $location == before {
+        &:before {
+            @include iconReset;
+            @include iconSet($icon);
+            font-size: $size * $iconSize;
+            color: $color;
+        }
+    } @else if $location == after {
+        &:after {
+            @include iconReset;
+            @include iconSet($icon);
+            font-size: $size * $iconSize;
+            color: $color;
+        }
+    }
+}
 
 
 
@@ -295,6 +383,14 @@ $colorSub:				#ff5600;			// extral link color
 @mixin textSelectionColor ($color: #ade1d6) {
 	&::selection { background: $color; }
 	&::-moz-selection { background: $color; }
+}
+
+@mixin button ($bgColor: $colorPrime, $txtColor: $colorGrayScaleG, $txtSize: $smallFontsize) {
+	font-size: $txtSize;
+	display: block;
+	color: $txtColor;
+	background-color: $bgColor;
+	padding: .4em;
 }
 
 

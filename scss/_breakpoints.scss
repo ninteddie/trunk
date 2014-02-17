@@ -1,73 +1,37 @@
-/******************************************************************************
-* TABLETS
-******************************************************************************/
+@media only screen and (min-width: 1040px) {
+	header[role="banner"]						{ position: fixed; top: 0; }
+	.centerHelper								{ width: $mainWrapperMaxWidth + $column-gutter; }
+	nav .centerHelper							{ width: $mainWrapperMaxWidth; height: $menuHeight; margin-top: $headerHeight; }
+	nav li										{ float: left; }
+	#mainColumn									{ float: left; width: $mainColumnMaxWidth / $mainWrapperMaxWidth *100%; }
+	#subColumn									{ float: right; width: $subColumnMaxWidth / $mainWrapperMaxWidth *100%; }
 
-@media only screen and (max-width: 1000px) {
-	//$wrapperWidth: $contentWidth; // store the original width so we can use it
-	//$contentWidth: 768px;
-
-	//#wrapper 					{ @include transition(left); max-width: $wrapperWidth; width: $wrapperWidth; position: relative; left: -1 * $menuWidth; }
-	.menuVisible #wrapper 		{ left: 0; }
-
-	//#header						{ max-width: $contentWidth; width: $contentWidth; position: relative; }
-	//#main 						{ max-width: $contentWidth; width: $contentWidth; position: relative; overflow: hidden; }
-	#header {
-		#menuToggle 			{ display: inline-block; }
-		&.row .row 				{ margin: 0; }
-	}
-	
-	// save button fast-fix; better to make de original css not px but %
-	.fixed[data-magellan-expedition] div {
-		padding-left: inherit;
-		width: auto;
-	}
 }
 
+@media only screen and (min-width: 760px) and (max-width: 1039px) {
+	#userPanel									{ width: 260px; }
+	.centerHelper								{ width: $mainColumnMaxWidth - $column-gutter; }
+	#mainWrapper								{ width: $mainColumnMaxWidth - $column-gutter; }
+	#mainColumn									{ width: $mainColumnMaxWidth; }
+}
 
-/******************************************************************************
-* SMARTPHONES
-******************************************************************************/
+@media only screen and (min-width: 655px) and (max-width: 759px) {
+	#userPanel									{ width: 260px; }
+	#mainWrapper								{ width: 600px; }
+	#mainColumn									{ width: 620px; }
+}
 
-@media only screen and (max-width: 767px) {
-	$contentWidth: 100%;
-	
-	#wrapper 					{ position: relative; left: 0; }
-	#menuWrapper 				{ height: 0; overflow: hidden; }
-	.menuVisible #menuWrapper 	{ height: auto; }
+@media only screen and (max-width: 655px) {
+	#mainWrapper								{ width: 420px; }
+	#mainColumn									{ width: 440px; }
 
-	#header,
-	#container,
-	#wrapper,
-	#menuWrapper,
-	#menu,
-	//#main 						{ max-width: $contentWidth; width: $contentWidth; }
-	
-	#header {
-		#title 					{ margin: 0; }
-		#servicemenu 			{ margin: 0; }
-		#servicemenu 			{ float: left; }
-		//#servicemenu > a,
-		//#servicemenu > span 	{ margin-right: $globalWhitespace; margin-left: 0; }
-	}
-
-	#menu 						{ padding: 0; }
-
-	// making text behind same as text below
-	fieldset {
-		label.right 			{ text-align: left; }
-		.right 					{ float: left!important; }
-		label.inline 			{ margin-bottom: auto; }
-		.fieldDesc 				{ margin-top: 0px; }
-		.row .small-12 p 		{ margin-top: 0px; }	
-	}
-	
-	// padding left and right can go
-	.section-container.accordion > section > .title a,
-	.section-container.accordion > .section > .title a {
-		padding-left: 0px;
-		padding-right: 0px;
-	}
-	
-	//section .onlyRadioCheckbox div.right { padding-bottom: $globalWhitespace; }
-		
+	#agendaList .innerWrapper					{ padding: $innerPadding; padding-top: 0; }
+	#agendaList li:first-child .innerWrapper	{ padding-top: $innerPadding; }
+	#agendaList article							{ height: 179px; padding-left: 0; padding-bottom: $innerPadding; }
+	#agendaList article > p						{ padding-left: 160px; }
+	#agendaList img								{ width: 60px; height: 60px; top: 58px; }
+	#agendaList header div						{ width: 70px; height: 110px; top: 58px; left: 70px; }
+	#agendaList .tag							{ top: 120px; left: 182px; }
+	#agendaList .addToCart:link,
+	#agendaList .canceled .addToCart			{ width: auto; }
 }

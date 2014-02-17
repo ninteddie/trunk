@@ -179,9 +179,9 @@ $f-dropdown-content-padding: 0 10px;
 // Grid Variables
 //
 
- $row-width: 1020px;											// the max-width of the content ( 20px padding included )
+ $row-width: $mainColumnMaxWidth;
  $column-gutter: 20px;
- $total-columns: 17;
+ $total-columns: 12;
 
 
 
@@ -211,7 +211,7 @@ $f-dropdown-content-padding: 0 10px;
 	// @import "foundation/components/keystrokes";
 	// @import "foundation/components/labels";
 	// @import "foundation/components/magellan";
-	// @import "foundation/components/orbit";
+ @import "foundation/components/orbit";
 	// @import "foundation/components/pagination";
 	// @import "foundation/components/panels";
 	// @import "foundation/components/pricing-tables";
