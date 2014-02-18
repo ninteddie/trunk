@@ -12,6 +12,7 @@ body									{ min-width: 465px; }
 
 .columns								{ padding-left: 0 !important; padding-right: $column-gutter !important; }
 .innerWrapper							{ background-color: $colorGrayScaleG; margin-bottom: $column-gutter; padding: $innerPadding; }
+.headingblock h3						{ padding: $innerPadding; color: $colorGrayScaleG; background-color: $colorGrayScaleB; }
 
 a:link,
 a:visited								{ color: $colorPrime; }
@@ -30,7 +31,9 @@ a:active								{ color: $colorNav; }
 .icon span,
 #languageSwitcher span,
 #winkelkarTitle span,
-#verlanglijstTitle span					{ @include visuallyHidden; }
+#verlanglijstTitle span,
+#calendar h3,
+#calendar thead							{ @include visuallyHidden; }
 
 .centerHelper							{ margin-left: auto; margin-right: auto; }
 
@@ -56,6 +59,10 @@ nav a									{ font-family: 'avenir_lt_pro95_black'; font-size: $navFontsize; }
 
 .headerBar	h1,
 .headerBar	span						{ font-family: 'avenir_lt_pro95_black'; font-size: $breadcrumbFontsize; line-height: 1; text-transform: uppercase; }
+
+.headingblock h3,
+#calendar caption						{ font-family: 'avenir_lt_pro95_black'; font-size: $blockHeaderFontsize; text-transform: uppercase; }
+#calendar td							{ font-family: 'avenir_lt_pro65_medium'; }
 
 #agendaList header div					{ font-family: "avenir_lt_pro85_heavy"; font-size: $smallFontsize; line-height: 1.2; }
 #agendaList header h2,
@@ -129,6 +136,54 @@ header[role="banner"] .centerHelper		{ padding: 0 $column-gutter/2; @include cle
 #socialMedia .icon-twitter				{ @include icon(twitter); color: $colorTwitter; }
 #socialMedia .icon:hover				{ color: $colorGrayScaleD; }
 #socialMedia .icon:active				{ color: $colorGrayScaleF; }
+
+#calendar table,
+#calendar caption,
+#calendar .innerWrapper					{ background-color: $colorGrayScaleB; background-color: $colorGrayScaleBAlt; }
+#calendar table							{ width: 100%; overflow: hidden; }
+#calendar caption						{ color: $colorGrayScaleG; height: 35px; vertical-align: middle; }
+#calendar caption span					{ line-height: 35px; }
+#calendar caption a:before				{ vertical-align: middle; }
+
+#calendar caption a:link,
+#calendar caption a:visited				{ color: $colorGrayScaleG; }
+#calendar caption a:hover,
+#calendar caption a:active				{ color: $colorPrime; }
+
+#calendar caption .prev					{ @include icon(chevron14left, 1.3, inherit); display: inline; float: left; }
+#calendar caption .next					{ @include icon(chevron14right, 1.3, inherit); display: inline; float: right; }
+
+#calendar caption,
+#calendar tbody							{ border-bottom: $colorGrayScaleA 1px solid; }
+#calendar thead							{ color: $colorGrayScaleG; }
+
+#calendar td							{ width: 40px; height: 40px; border: $colorGrayScaleA 1px solid; border-left: none; border-top: none; position: relative; }
+#calendar td a,
+#calendar td span						{ display: block; text-align: center; }
+#calendar td a							{ @include icon(dot, .4); }
+#calendar td a:before					{ position: absolute; left: 50%; top: 50%; margin-left: -3px; margin-top: 8px; }
+
+#calendar td:hover						{ background-color: $colorGrayScaleE; }
+#calendar td.today						{ background-color: $colorGrayScaleD; }
+#calendar td.noEvent:hover				{ background: none; }
+
+#calendar td.noThisMonth a,
+#calendar td.noThisMonth a:before,
+#calendar td.noThisMonth span			{ color: $colorGrayScaleD; }
+
+#calendar td a,
+#calendar td span						{ color: $colorGrayScaleG; line-height: 39px; }
+
+#calendar td a:before					{ color: $colorPrime; }
+
+#calendar td:hover a:before,
+#calendar td.today a:before				{ color: $colorGrayScaleG; }
+
+#calendar td.today a,
+#calendar td.today span					{ color: $colorGrayScaleA; }
+
+
+
 
 
 

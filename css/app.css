@@ -1553,6 +1553,11 @@ body {
   margin-bottom: 20px;
   padding: 10px; }
 
+.headingblock h3 {
+  padding: 10px;
+  color: white;
+  background-color: #282828; }
+
 a:link,
 a:visited {
   color: #32b498; }
@@ -1610,7 +1615,9 @@ a:active {
 .icon span,
 #languageSwitcher span,
 #winkelkarTitle span,
-#verlanglijstTitle span {
+#verlanglijstTitle span,
+#calendar h3,
+#calendar thead {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -1668,6 +1675,15 @@ nav a {
   font-size: 14px;
   line-height: 1;
   text-transform: uppercase; }
+
+.headingblock h3,
+#calendar caption {
+  font-family: 'avenir_lt_pro95_black';
+  font-size: 14px;
+  text-transform: uppercase; }
+
+#calendar td {
+  font-family: 'avenir_lt_pro65_medium'; }
 
 #agendaList header div {
   font-family: "avenir_lt_pro85_heavy";
@@ -1884,6 +1900,140 @@ header[role="banner"] .centerHelper {
 
 #socialMedia .icon:active {
   color: #cccccc; }
+
+#calendar table,
+#calendar caption,
+#calendar .innerWrapper {
+  background-color: #282828;
+  background-color: rgba(40, 40, 40, 0.9); }
+
+#calendar table {
+  width: 100%;
+  overflow: hidden; }
+
+#calendar caption {
+  color: white;
+  height: 35px;
+  vertical-align: middle; }
+
+#calendar caption span {
+  line-height: 35px; }
+
+#calendar caption a:before {
+  vertical-align: middle; }
+
+#calendar caption a:link,
+#calendar caption a:visited {
+  color: white; }
+
+#calendar caption a:hover,
+#calendar caption a:active {
+  color: #32b498; }
+
+#calendar caption .prev {
+  display: inline;
+  float: left; }
+  #calendar caption .prev:before {
+    font-family: 'concertgebouw_iconfont';
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e618";
+    font-size: 26px;
+    color: inherit; }
+
+#calendar caption .next {
+  display: inline;
+  float: right; }
+  #calendar caption .next:before {
+    font-family: 'concertgebouw_iconfont';
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e617";
+    font-size: 26px;
+    color: inherit; }
+
+#calendar caption,
+#calendar tbody {
+  border-bottom: black 1px solid; }
+
+#calendar thead {
+  color: white; }
+
+#calendar td {
+  width: 40px;
+  height: 40px;
+  border: black 1px solid;
+  border-left: none;
+  border-top: none;
+  position: relative; }
+
+#calendar td a,
+#calendar td span {
+  display: block;
+  text-align: center; }
+
+#calendar td a:before {
+  font-family: 'concertgebouw_iconfont';
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e611";
+  font-size: 8px;
+  color: inherit; }
+
+#calendar td a:before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -3px;
+  margin-top: 8px; }
+
+#calendar td:hover {
+  background-color: #999999; }
+
+#calendar td.today {
+  background-color: #666666; }
+
+#calendar td.noEvent:hover {
+  background: none; }
+
+#calendar td.noThisMonth a,
+#calendar td.noThisMonth a:before,
+#calendar td.noThisMonth span {
+  color: #666666; }
+
+#calendar td a,
+#calendar td span {
+  color: white;
+  line-height: 39px; }
+
+#calendar td a:before {
+  color: #32b498; }
+
+#calendar td:hover a:before,
+#calendar td.today a:before {
+  color: white; }
+
+#calendar td.today a,
+#calendar td.today span {
+  color: black; }
 
 #winkelkarTitle .itemNumber,
 #verlanglijstTitle .itemNumber {
