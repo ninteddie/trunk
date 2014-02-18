@@ -1,0 +1,91 @@
+body.modalOpen{
+	overflow: hidden;
+}
+
+
+
+.modalWrapper {
+	$modalZindex: 99; //ideally the rest of the site lives in a wrapper with a z-index lower than this one, otherwise just set this super super high and pray it works
+	$modalMargin: 40px;
+	$modalMask: rgba(0,0,0,.5);
+	$modalMaskFallback: #111;
+
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: $modalZindex;
+
+	.mask {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: $modalMaskFallback;
+		background: $modalMask;
+	}
+
+	.modal {
+		background: #fff;
+		color: #000;
+	}
+
+
+	&.alert {
+		// fixed dimensions, ideally large enough to avoid overflow
+
+		overflow: auto;
+		
+		.modal {
+			position: relative;
+			overflow: auto;
+			margin: $modalMargin auto;
+			width: 500px;
+			height: 400px;
+		}
+	}
+
+
+	&.reader {
+		// modal grows in height to fit content
+		// mask is handled by wrapper for this layout
+		
+		overflow: auto;	
+		overflow-y: scroll;
+		background: $modalMaskFallback;
+		background: $modalMask;
+		
+		.mask {
+			display: none;
+		}
+
+		.modal {
+			position: relative;
+			margin: $modalMargin auto;
+			// width: 500px;
+			height: auto;
+		}
+	}
+
+
+	&.layer {
+		// modal fills the viewport, contained by a margin
+		// optional max width
+		// modal handles overflow itself
+
+		.modal {
+			position: fixed;
+			top: $modalMargin;
+			right: $modalMargin;
+			bottom: $modalMargin;
+			left: $modalMargin;
+			overflow: auto;
+			margin: 0 auto; // only effective when max width is set
+			
+			// un-comment for max width:
+			// max-width: 700px;
+		}
+	}
+}

@@ -283,3 +283,13 @@ nav a:active									{ color: $colorGrayScaleB; }
 @import "_breakpoints.scss";
 
 
+@import "_modals.scss";
+
+#mainWrapper .detailWrapper 		{ background: #fff; min-height: 400px; width: 760px; margin: 2em auto 0 auto; }
+@media only screen and (max-width: 1039px) {
+	#mainWrapper .detailWrapper		{ width: 100%; }
+}
+.reader .modal 						{ width: 760px; }
+@media only screen and (max-width: 800px) {
+	.reader .modal 					{ width: 90%; }
+}
