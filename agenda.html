@@ -149,7 +149,7 @@
 							</header>
 							<p>De liefde regeert, overal en altijd. De wereld van de barokopera is daarop zeker geen uitzondering, want of het nu gaat om goden of mensen, iedereen valt De liefde regeert, overal en altijd.<a class="more" href="#">...Lees meer</a></p>
 							<img src="http://fakeimg.pl/140x140/00CED1/FFF/?text=sample">
-							<ul class="tag inline-list">
+							<ul class="tag type2 inline-list">
 								<li><a href="#">Tags</a></li>
 								<li><a href="#">Con tempo</a></li>
 								<li><a href="#">Familievoorstelling</a></li>
@@ -173,7 +173,7 @@
 							</header>
 							<p>De liefde regeert, overal en altijd.<a class="more" href="#">...Lees meer</a></p>
 							<img src="http://fakeimg.pl/140x140/00CED1/FFF/?text=sample">
-							<ul class="tag inline-list">
+							<ul class="tag type2 inline-list">
 								<li><a href="#">Tags</a></li>
 								<li><a href="#">Con tempo</a></li>
 								<li><a href="#">Familievoorstelling</a></li>
@@ -196,7 +196,7 @@
 							</header>
 							<p>De liefde regeert, overal en altijd. De wereld van de barokopera is daarop zeker geen uitzondering, want of het nu gaat om goden of mensen, iedereen valt De liefde regeert, overal en altijd.<a class="more" href="#">...Lees meer</a></p>
 							<img src="http://fakeimg.pl/140x140/00CED1/FFF/?text=sample">
-							<ul class="tag inline-list">
+							<ul class="tag type2 inline-list">
 								<li><a href="#">Tags</a></li>
 								<li><a href="#">Con tempo</a></li>
 								<li><a href="#">Familievoorstelling</a></li>
@@ -282,64 +282,92 @@
 					</tbody>
 				</table>
 				<div class="innerWrapper">
-					<div>
-						filter op
-						<form class="custom">
-							<label for="checkbox1">
-								<input type="checkbox" id="checkbox1">Dag
-							</label>
-							<label for="checkbox2">
-								<input type="checkbox" id="checkbox2">Avond
-							</label>
-							<label for="checkbox3">
-								<input type="checkbox" id="checkbox3">Ook in het Concertgebouw
-							</label>
-							<label for="checkbox4">
-								<input type="checkbox" id="checkbox4">Ma
-							</label>
-							<label for="checkbox5">
-								<input type="checkbox" id="checkbox5">Di
-							</label>
-							<label for="checkbox6">
-								<input type="checkbox" id="checkbox6">Woe
-							</label>
-							<label for="checkbox7">
-								<input type="checkbox" id="checkbox7">Do
-							</label>
-							<label for="checkbox8">
-								<input type="checkbox" id="checkbox8">Vr
-							</label>
-							<label for="checkbox9">
-								<input type="checkbox" id="checkbox9">Za
-							</label>
-							<label for="checkbox10">
-								<input type="checkbox" id="checkbox10">Zo
-							</label>
-						</form>
-					</div>
+					<form>
+						<fieldset>
+							<legend>Filter op</legend>
+								<label for="toggleAll">
+									<input type="checkbox" id="toggleAll">Alles
+								</label>
+							<div class="posLeft">
+								<label for="checkbox1">
+									<input type="checkbox" id="checkbox1">Dag
+								</label>
+								<label for="checkbox2">
+									<input type="checkbox" id="checkbox2">Avond
+								</label>
+								<label for="checkbox3">
+									<input type="checkbox" id="checkbox3">Ook in het Concertgebouw
+								</label>
+							</div>
+							<div class="posMiddle">
+								<label for="checkbox4">
+									<input type="checkbox" id="checkbox4">Ma
+								</label>
+								<label for="checkbox5">
+									<input type="checkbox" id="checkbox5">Di
+								</label>
+								<label for="checkbox6">
+									<input type="checkbox" id="checkbox6">Woe
+								</label>
+								<label for="checkbox7">
+									<input type="checkbox" id="checkbox7">Do
+								</label>
+							</div>
+							<div class="posRight">
+								<label for="checkbox8">
+									<input type="checkbox" id="checkbox8">Vr
+								</label>
+								<label for="checkbox9">
+									<input type="checkbox" id="checkbox9">Za
+								</label>
+								<label for="checkbox10">
+									<input type="checkbox" id="checkbox10">Zo
+								</label>
+								<input class="submitButton" type="submit" value="Filter">
+							</div>
+						</fieldset>
+					</form>
+				</div>
+				<div class="tagBlock innerWrapper">
+					<span>… of zoek op thema</span>
+					<ul class="tag type1 inline-list">
+						<li><a href="#">orkestraal</a></li>
+						<li><a href="#">vocaal</a></li>
+						<li><a href="#">klavier</a></li>
+						<li><a href="#">kamermuziek</a></li>
+						<li><a href="#">muziektheater</a></li>
+						<li><a href="#">dans</a></li>
+						<li><a href="#">familievoorstelling</a></li>
+						<li><a href="#">literatuur</a></li>
+						<li><a href="#">jazz</a></li>
+						<li><a href="#">pop-rock</a></li>
+						<li><a href="#">wereld</a></li>
+						<li><a href="#">Middeleeuwen tot bach</a></li>
+						<li><a href="#">haydn tot sibelius</a></li>
+						<li><a href="#">cage tot vandaag</a></li>
+						<li><a href="#">tips voor jongeren</a></li>
+						<li><a href="#">business seats</a></li>
+					</ul>
 				</div>
 			</section>
 			
-			<div class="innerWrapper">
-				<article>
-					<header>
-						<h3>BOOM</h3>
-					</header>
-					<time datetime="2014-11-22">Wo 22.11.14 / 15:00</time>
-					<img>
-					<footer>Dr. Strangelove Company</footer>
-				</article>
-			</div>
-			<div class="innerWrapper">
-				<article>
-					<header>
-						<h3>BOOM</h3>
-					</header>
-					<time datetime="2014-11-22">Wo 22.11.14 / 15:00</time>
-					<img>
-					<footer>Dr. Strangelove Company</footer>
-				</article>
-			</div>
+			<article class="headingblock">
+				<h3>Laat u gidsen</h3>
+				<div class="innerWrapper">
+					<p>Laat u leiden en verleiden door de programmagids. Kies een van onze groeperingen om een selectie te maken uit het aanbod.</p>
+					<div class="inlineCenterWrapper"><a href="#" class="blockButton">Naar de programmagids</a></div>
+				</div>
+			</article>
+
+			<article class="headingblock">
+				<h3>Seizoen 13/14</h3>
+				<div class="innerWrapper">
+					<p>Het seizoen 2013-2014 besteedt veel aandacht aan de innovatie uit Wenen, met de drie Weense Scholen voorop. Met onder meer een Focus Beethoven, een happening rond Arnold Schönbergs Pierrot Lunaire, en een Domein Beat Furrer komen drie generaties muzikale vernieuwers aan bod. Wiener Mélange mixt de drie Weense Scholen.</p>
+					<div class="inlineCenterWrapper pdfWrapper">
+						<img src="http://fakeimg.pl/100x140/eedd88">
+					</div>
+				</div>
+			</article>
 		</aside>
 	</div>
 
@@ -387,16 +415,20 @@
 <!-- ############################################################################################################################################# -->
 	<script src="js/vendor/jquery.js"></script>
 	<script src="js/foundation/foundation.js"></script>
-	<script src="js/foundation/foundation.abide.js"></script>
+
+	<script src="js/foundation/foundation.dropdown.js"></script>
+	<script src="js/foundation/foundation.orbit.js"></script>
+
+	<!--<script src="js/foundation/foundation.abide.js"></script>
 	<script src="js/foundation/foundation.alerts.js"></script>
 	<script src="js/foundation/foundation.clearing.js"></script>
 	<script src="js/foundation/foundation.cookie.js"></script>
-	<script src="js/foundation/foundation.dropdown.js"></script>
+	
 	<script src="js/foundation/foundation.forms.js"></script>
 	<script src="js/foundation/foundation.interchange.js"></script>
 	<script src="js/foundation/foundation.joyride.js"></script>
 	<script src="js/foundation/foundation.magellan.js"></script>
-	<script src="js/foundation/foundation.orbit.js"></script>
+	
 	<script src="js/foundation/foundation.placeholder.js"></script>
 	<script src="js/foundation/foundation.reveal.js"></script>
 	<script src="js/foundation/foundation.section.js"></script>
@@ -410,7 +442,7 @@
 		$.vegas({
 			src:'img/bg.jpg'
 		});
-	</script>
+	</script>-->
 </body>
 </html>
 

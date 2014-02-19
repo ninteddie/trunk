@@ -25,13 +25,13 @@
 	#mainWrapper								{ width: 420px; }
 	#mainColumn									{ width: 440px; }
 
-	#agendaList .innerWrapper					{ padding: $innerPadding; padding-top: 0; }
+	#agendaList .innerWrapper					{ padding: 0 $innerPadding; }
 	#agendaList li:first-child .innerWrapper	{ padding-top: $innerPadding; }
 	#agendaList article							{ height: 179px; padding-left: 0; padding-bottom: $innerPadding; }
-	#agendaList article > p						{ padding-left: 160px; }
+	#agendaList article > p						{ padding-left: 160px; height: 16px*5; }
 	#agendaList img								{ width: 60px; height: 60px; top: 58px; }
-	#agendaList header div						{ width: 70px; height: 110px; top: 58px; left: 70px; }
-	#agendaList .tag							{ top: 120px; left: 182px; }
+	#agendaList header div						{ width: 82px; height: 110px; top: 58px; left: 70px; }
+	#agendaList .tag							{ top: 144px; left: 160px; }
 	#agendaList .addToCart:link,
 	#agendaList .canceled .addToCart			{ width: auto; }
 }

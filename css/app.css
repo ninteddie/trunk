@@ -1558,6 +1558,91 @@ body {
   color: white;
   background-color: #282828; }
 
+.headingblock p,
+.headingblock .inlineCenterWrapper,
+.headingblock .tag {
+  margin-bottom: 10px; }
+
+.headingblock .tag {
+  margin-top: 10px; }
+
+.blockButton:link,
+.blockButton:visited,
+.submitButton {
+  font-size: 12px;
+  display: inline-block;
+  color: white;
+  background-color: #32b498;
+  padding: 6px 10px; }
+
+.blockButton:hover,
+.submitButton:hover {
+  background-color: #666666; }
+
+.blockButton:active,
+.submitButton:active {
+  background-color: #cccccc; }
+
+.tag {
+  margin: 0; }
+
+.tag li {
+  margin: 4px 4px 0 0; }
+
+.tag a {
+  display: block !important; }
+
+.tag.type1 a:link,
+.tag.type1 a:visited {
+  font-size: 10px;
+  display: inline-block;
+  color: white;
+  background-color: #666666;
+  padding: 0.6em 1em; }
+
+.tag.type1 a:hover {
+  background-color: black; }
+
+.tag.type1 a:active {
+  background-color: #cccccc; }
+
+.tag.type2 a:link,
+.tag.type2 a:visited {
+  font-size: 10px;
+  display: inline-block;
+  color: black;
+  background-color: white;
+  padding: 0.4em;
+  border: black 1px solid; }
+
+.tag.type2 a:hover {
+  color: white;
+  background-color: black; }
+
+.tag.type2 a:active {
+  color: white;
+  background-color: #cccccc;
+  border-color: #cccccc; }
+
+#agendaList .tag {
+  position: absolute;
+  top: 116px;
+  overflow: hidden; }
+
+.pdfWrapper:after {
+  font-family: 'concertgebouw_iconfont';
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e60b";
+  font-size: 50px;
+  color: red; }
+
 a:link,
 a:visited {
   color: #32b498; }
@@ -1631,6 +1716,9 @@ a:active {
   margin-left: auto;
   margin-right: auto; }
 
+.inlineCenterWrapper {
+  text-align: center; }
+
 #logoAnchor h2 {
   font-family: "avenir_lt_pro95_black";
   font-size: 23px;
@@ -1676,14 +1764,39 @@ nav a {
   line-height: 1;
   text-transform: uppercase; }
 
+.headingblock p {
+  font-family: 'avenir_lt_pro45_book';
+  font-size: 14px;
+  line-height: 1.2; }
+
 .headingblock h3,
-#calendar caption {
+#calendar caption,
+#calendar legend {
   font-family: 'avenir_lt_pro95_black';
   font-size: 14px;
   text-transform: uppercase; }
 
-#calendar td {
+#calendar td,
+#calendar label {
   font-family: 'avenir_lt_pro65_medium'; }
+
+#calendar label {
+  font-size: 13px; }
+
+.tag a {
+  font-family: "avenir_lt_pro85_heavy";
+  font-size: 10px;
+  line-height: 1;
+  text-transform: uppercase; }
+
+.tagBlock {
+  font-family: "avenir_lt_pro85_heavy";
+  font-size: 18px; }
+
+.blockButton,
+#calendar .submitButton {
+  font-family: 'avenir_lt_pro95_black';
+  text-transform: uppercase; }
 
 #agendaList header div {
   font-family: "avenir_lt_pro85_heavy";
@@ -1692,9 +1805,6 @@ nav a {
 
 #agendaList header h2,
 #agendaList header p,
-#agendaList .tag a {
-  font-family: "avenir_lt_pro85_heavy"; }
-
 #agendaList header h2 {
   font-size: 20px;
   line-height: 1.4; }
@@ -1703,9 +1813,6 @@ nav a {
   font-size: 16px;
   line-height: 1.2;
   color: #666666; }
-
-#agendaList .tag a {
-  line-height: 1; }
 
 #agendaList article > p {
   font-size: 14px; }
@@ -1904,8 +2011,7 @@ header[role="banner"] .centerHelper {
 #calendar table,
 #calendar caption,
 #calendar .innerWrapper {
-  background-color: #282828;
-  background-color: rgba(40, 40, 40, 0.9); }
+  background-color: #282828; }
 
 #calendar table {
   width: 100%;
@@ -1979,6 +2085,10 @@ header[role="banner"] .centerHelper {
   border-top: none;
   position: relative; }
 
+#calendar td time {
+  position: relative;
+  display: block; }
+
 #calendar td a,
 #calendar td span {
   display: block;
@@ -2034,6 +2144,56 @@ header[role="banner"] .centerHelper {
 #calendar td.today a,
 #calendar td.today span {
   color: black; }
+
+#calendar fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  height: 200px;
+  position: relative; }
+
+#calendar legend,
+#calendar label {
+  color: #cccccc; }
+
+#calendar legend {
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom: #cccccc 1px solid; }
+
+#calendar label {
+  display: block;
+  padding: 3px 0;
+  cursor: pointer; }
+
+#calendar input {
+  margin-right: 5px; }
+
+#calendar #toggleAll {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+#calendar fieldset > div {
+  position: absolute; }
+
+#calendar .posLeft {
+  width: 120px; }
+
+#calendar .posMiddle {
+  left: 136px; }
+
+#calendar .posRight {
+  left: 200px; }
+
+#calendar .submitButton {
+  border: none;
+  position: absolute;
+  left: -200px;
+  bottom: -70px; }
+
+#calendar .tagBlock {
+  background-color: #cccccc;
+  margin-top: -20px; }
 
 #winkelkarTitle .itemNumber,
 #verlanglijstTitle .itemNumber {
@@ -2279,10 +2439,10 @@ nav a:active {
 #agendaList .addToCart:link,
 #agendaList .addToCart:visited {
   font-size: 10px;
-  display: block;
+  display: inline-block;
   color: white;
   background-color: #32b498;
-  padding: .4em;
+  padding: 0.4em;
   width: 100px;
   position: absolute;
   bottom: 0;
@@ -2308,43 +2468,15 @@ nav a:active {
 
 #agendaList .canceled .addToCart {
   font-size: 10px;
-  display: block;
+  display: inline-block;
   color: #999999;
   background-color: white;
-  padding: .4em;
+  padding: 0.4em;
   border: #999999 1px solid;
   width: 100px;
   position: absolute;
   bottom: 0;
   text-align: center; }
-
-#agendaList .tag {
-  margin-bottom: 0;
-  position: absolute;
-  top: 116px;
-  left: 302px; }
-
-#agendaList .tag li {
-  margin: 4px 4px 0 0; }
-
-#agendaList .tag a:link,
-#agendaList .tag a:visited {
-  font-size: 10px;
-  display: block;
-  color: black;
-  background-color: white;
-  padding: .4em;
-  text-transform: uppercase;
-  border: black 1px solid; }
-
-#agendaList .tag a:hover {
-  color: white;
-  background-color: black; }
-
-#agendaList .tag a:active {
-  color: white;
-  background-color: #cccccc;
-  border-color: #cccccc; }
 
 #agendaList + .more {
   margin-right: 20px;
@@ -2425,8 +2557,7 @@ nav a:active {
     width: 440px; }
 
   #agendaList .innerWrapper {
-    padding: 10px;
-    padding-top: 0; }
+    padding: 0 10px; }
 
   #agendaList li:first-child .innerWrapper {
     padding-top: 10px; }
@@ -2437,7 +2568,8 @@ nav a:active {
     padding-bottom: 10px; }
 
   #agendaList article > p {
-    padding-left: 160px; }
+    padding-left: 160px;
+    height: 80px; }
 
   #agendaList img {
     width: 60px;
@@ -2445,14 +2577,14 @@ nav a:active {
     top: 58px; }
 
   #agendaList header div {
-    width: 70px;
+    width: 82px;
     height: 110px;
     top: 58px;
     left: 70px; }
 
   #agendaList .tag {
-    top: 120px;
-    left: 182px; }
+    top: 144px;
+    left: 160px; }
 
   #agendaList .addToCart:link,
   #agendaList .canceled .addToCart {

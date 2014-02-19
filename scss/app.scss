@@ -8,11 +8,49 @@
 //										GENERAL
 //
 ///////////////////////////////////////////////////////////////////////////////
+
 body									{ min-width: 465px; }
 
 .columns								{ padding-left: 0 !important; padding-right: $column-gutter !important; }
 .innerWrapper							{ background-color: $colorGrayScaleG; margin-bottom: $column-gutter; padding: $innerPadding; }
+
 .headingblock h3						{ padding: $innerPadding; color: $colorGrayScaleG; background-color: $colorGrayScaleB; }
+.headingblock p,
+.headingblock .inlineCenterWrapper,
+.headingblock .tag						{ margin-bottom: $innerPadding; }
+.headingblock .tag						{ margin-top: $innerPadding; }
+
+.blockButton:link,
+.blockButton:visited,
+.submitButton							{ @include button($colorPrime, $colorGrayScaleG, $smallFontsize, 6px 10px); }
+.blockButton:hover,
+.submitButton:hover						{ background-color: $colorGrayScaleD; }
+.blockButton:active,
+.submitButton:active					{ background-color: $colorGrayScaleF; }
+
+///////////////////////////////////////////////////////////////////////////////
+
+.tag									{ margin: 0; }
+.tag li									{ margin: 4px 4px 0 0; }
+.tag a									{ display: block !important; }
+
+.tag.type1 a:link,
+.tag.type1 a:visited					{ @include button($colorGrayScaleD, $colorGrayScaleG, 10px, .6em 1em); }
+.tag.type1 a:hover						{ background-color: $colorGrayScaleA; }
+.tag.type1 a:active						{ background-color: $colorGrayScaleF; }
+
+.tag.type2 a:link,
+.tag.type2 a:visited					{ @include button($colorGrayScaleG, $colorGrayScaleA, 10px); border: $colorGrayScaleA 1px solid; }
+.tag.type2 a:hover						{ color: $colorGrayScaleG; background-color: $colorGrayScaleA; }
+.tag.type2 a:active						{ color: $colorGrayScaleG; background-color: $colorGrayScaleF; border-color: $colorGrayScaleF; }
+
+#agendaList .tag						{ position: absolute; top: 116px; overflow: hidden; }
+
+///////////////////////////////////////////////////////////////////////////////
+
+.pdfWrapper								{ @include icon(pdf, 2.5, $colorNav, after); }
+
+///////////////////////////////////////////////////////////////////////////////
 
 a:link,
 a:visited								{ color: $colorPrime; }
@@ -36,6 +74,7 @@ a:active								{ color: $colorNav; }
 #calendar thead							{ @include visuallyHidden; }
 
 .centerHelper							{ margin-left: auto; margin-right: auto; }
+.inlineCenterWrapper					{ text-align: center; }
 
 
 
@@ -60,17 +99,25 @@ nav a									{ font-family: 'avenir_lt_pro95_black'; font-size: $navFontsize; }
 .headerBar	h1,
 .headerBar	span						{ font-family: 'avenir_lt_pro95_black'; font-size: $breadcrumbFontsize; line-height: 1; text-transform: uppercase; }
 
+.headingblock p							{ font-family: 'avenir_lt_pro45_book'; font-size: $blockPFontsize; line-height: 1.2; }
 .headingblock h3,
-#calendar caption						{ font-family: 'avenir_lt_pro95_black'; font-size: $blockHeaderFontsize; text-transform: uppercase; }
-#calendar td							{ font-family: 'avenir_lt_pro65_medium'; }
+#calendar caption,
+#calendar legend						{ font-family: 'avenir_lt_pro95_black'; font-size: $blockHeaderFontsize; text-transform: uppercase; }
+#calendar td,
+#calendar label							{ font-family: 'avenir_lt_pro65_medium'; }
+#calendar label							{ font-size: $checkboxFontsize; }
+
+.tag a									{ font-family: "avenir_lt_pro85_heavy"; font-size: 10px; line-height: 1; text-transform: uppercase; }
+.tagBlock								{ font-family: "avenir_lt_pro85_heavy"; font-size: 18px; }
+
+.blockButton,
+#calendar .submitButton					{ font-family: 'avenir_lt_pro95_black'; text-transform: uppercase; }
 
 #agendaList header div					{ font-family: "avenir_lt_pro85_heavy"; font-size: $smallFontsize; line-height: 1.2; }
 #agendaList header h2,
 #agendaList header p,
-#agendaList .tag a						{ font-family: "avenir_lt_pro85_heavy"; }
 #agendaList header h2					{ font-size: $listHeadingFontsize; line-height: 1.4; }
 #agendaList header p					{ font-size: $listSubFontsize; line-height: 1.2; color: $colorGrayScaleD; }
-#agendaList .tag a						{ line-height: 1; }
 #agendaList article > p					{ font-size: $listPFontsize; }
 #agendaList + .more a					{ font-family: 'avenir_lt_pro95_black'; font-size: $smallFontsize; }
 #agendaList article > p .more			{ font-family: "avenir_lt_pro85_heavy"; }
@@ -139,7 +186,7 @@ header[role="banner"] .centerHelper		{ padding: 0 $column-gutter/2; @include cle
 
 #calendar table,
 #calendar caption,
-#calendar .innerWrapper					{ background-color: $colorGrayScaleB; background-color: $colorGrayScaleBAlt; }
+#calendar .innerWrapper					{ background-color: $colorGrayScaleB; }
 #calendar table							{ width: 100%; overflow: hidden; }
 #calendar caption						{ color: $colorGrayScaleG; height: 35px; vertical-align: middle; }
 #calendar caption span					{ line-height: 35px; }
@@ -158,6 +205,7 @@ header[role="banner"] .centerHelper		{ padding: 0 $column-gutter/2; @include cle
 #calendar thead							{ color: $colorGrayScaleG; }
 
 #calendar td							{ width: 40px; height: 40px; border: $colorGrayScaleA 1px solid; border-left: none; border-top: none; position: relative; }
+#calendar td time						{ position: relative; display: block; }
 #calendar td a,
 #calendar td span						{ display: block; text-align: center; }
 #calendar td a							{ @include icon(dot, .4); }
@@ -181,6 +229,28 @@ header[role="banner"] .centerHelper		{ padding: 0 $column-gutter/2; @include cle
 
 #calendar td.today a,
 #calendar td.today span					{ color: $colorGrayScaleA; }
+
+#calendar fieldset						{ border: none; margin: 0; padding: 0; height: 200px; position: relative; }
+#calendar legend,
+#calendar label							{ color: $colorGrayScaleF; }
+
+#calendar legend						{ width: 100%; padding-bottom: $innerPadding; border-bottom: $colorGrayScaleF 1px solid; }
+
+#calendar label							{ display: block; padding: 3px 0; cursor: pointer; }
+
+#calendar input							{ margin-right: 5px; }
+
+#calendar #toggleAll					{ margin-top: $innerPadding; margin-bottom: $innerPadding; }
+
+#calendar fieldset > div				{ position: absolute; }
+
+#calendar .posLeft						{ width: 120px; }
+#calendar .posMiddle					{ left: 136px; }
+#calendar .posRight						{ left: 200px; }
+
+#calendar .submitButton					{ border: none; position: absolute; left: -200px; bottom: -70px; }
+
+#calendar .tagBlock						{ background-color: $colorGrayScaleF; margin-top: $column-gutter*-1; }
 
 
 
@@ -319,16 +389,6 @@ nav a:active									{ color: $colorGrayScaleB; }
 
 #agendaList .canceled header					{ color: $colorGrayScaleE; }
 #agendaList .canceled .addToCart				{ @include button($colorGrayScaleG, $colorGrayScaleE, 10px); border: $colorGrayScaleE 1px solid; width: 100px; position: absolute; bottom: 0; text-align: center; }
-
-
-#agendaList .tag								{ margin-bottom: 0; position: absolute; top: 116px; left: 302px; }
-
-#agendaList .tag li								{ margin: 4px 4px 0 0; }
-
-#agendaList .tag a:link,
-#agendaList .tag a:visited						{ @include button($colorGrayScaleG, $colorGrayScaleA, 10px); text-transform: uppercase; border: $colorGrayScaleA 1px solid; }
-#agendaList .tag a:hover						{ color: $colorGrayScaleG; background-color: $colorGrayScaleA; }
-#agendaList .tag a:active						{ color: $colorGrayScaleG; background-color: $colorGrayScaleF; border-color: $colorGrayScaleF; }
 
 #agendaList + .more								{ margin-right: $innerPadding*2; text-align: center; }
 #agendaList + .more a							{ @include icon(chevron14down, 1, inherit, after); text-transform: uppercase; }

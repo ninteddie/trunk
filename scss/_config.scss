@@ -229,10 +229,12 @@ $qFontsize:				20px;
 
 $listHeadingFontsize:	20px;
 $listSubFontsize:		16px;
+$blockPFontsize:		14px;
 $listPFontsize:			14px;
 $blockHeaderFontsize:	14px;
 $breadcrumbFontsize:	14px;
 $userPanelFontsize:		13px;
+$checkboxFontsize:		13px;
 $smallFontsize:			12px;
 
 
@@ -385,12 +387,14 @@ $iconSize: 20px;                            //icons have a base size at which th
 	&::-moz-selection { background: $color; }
 }
 
-@mixin button ($bgColor: $colorPrime, $txtColor: $colorGrayScaleG, $txtSize: $smallFontsize) {
+@mixin button ($bgColor: $colorPrime, $txtColor: $colorGrayScaleG, $txtSize: $smallFontsize, $padding: .4em) {
 	font-size: $txtSize;
-	display: block;
+	display: inline-block;
 	color: $txtColor;
 	background-color: $bgColor;
-	padding: .4em;
+	padding: $padding;
 }
+
+
 
 
