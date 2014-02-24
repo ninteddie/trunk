@@ -1629,19 +1629,28 @@ body {
   top: 116px;
   overflow: hidden; }
 
-.pdfWrapper:after {
-  font-family: 'concertgebouw_iconfont';
-  font-weight: normal;
-  font-style: normal;
-  font-variant: normal;
-  line-height: 1;
-  speak: none;
-  text-transform: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\e60b";
-  font-size: 50px;
-  color: red; }
+.pdfWrapper {
+  position: relative; }
+  .pdfWrapper:before, .pdfWrapper:after {
+    font-family: 'concertgebouw_iconfont';
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 50px;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .pdfWrapper:before {
+    content: "\e61c";
+    color: #fff; }
+  .pdfWrapper:after {
+    content: "\e60b";
+    color: red; }
 
 a:link,
 a:visited {
@@ -1955,8 +1964,9 @@ header[role="banner"] .centerHelper {
   margin-left: 5px; }
 
 #socialMedia .icon-youtube {
+  position: relative;
   color: red; }
-  #socialMedia .icon-youtube:before {
+  #socialMedia .icon-youtube:before, #socialMedia .icon-youtube:after {
     font-family: 'concertgebouw_iconfont';
     font-weight: normal;
     font-style: normal;
@@ -1966,13 +1976,21 @@ header[role="banner"] .centerHelper {
     text-transform: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    content: "\e602";
     font-size: 20px;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  #socialMedia .icon-youtube:before {
+    content: "\e61b";
+    color: #fff; }
+  #socialMedia .icon-youtube:after {
+    content: "\e602";
     color: inherit; }
 
 #socialMedia .icon-facebook {
+  position: relative;
   color: #009ce7; }
-  #socialMedia .icon-facebook:before {
+  #socialMedia .icon-facebook:before, #socialMedia .icon-facebook:after {
     font-family: 'concertgebouw_iconfont';
     font-weight: normal;
     font-style: normal;
@@ -1982,13 +2000,21 @@ header[role="banner"] .centerHelper {
     text-transform: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    content: "\e610";
     font-size: 20px;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  #socialMedia .icon-facebook:before {
+    content: "\e61b";
+    color: #fff; }
+  #socialMedia .icon-facebook:after {
+    content: "\e610";
     color: inherit; }
 
 #socialMedia .icon-twitter {
+  position: relative;
   color: #80cef3; }
-  #socialMedia .icon-twitter:before {
+  #socialMedia .icon-twitter:before, #socialMedia .icon-twitter:after {
     font-family: 'concertgebouw_iconfont';
     font-weight: normal;
     font-style: normal;
@@ -1998,8 +2024,15 @@ header[role="banner"] .centerHelper {
     text-transform: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    content: "\e606";
     font-size: 20px;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  #socialMedia .icon-twitter:before {
+    content: "\e61b";
+    color: #fff; }
+  #socialMedia .icon-twitter:after {
+    content: "\e606";
     color: inherit; }
 
 #socialMedia .icon:hover {
