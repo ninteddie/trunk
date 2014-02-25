@@ -117,16 +117,9 @@
 	
 
 	<div id="mainWrapper">
-		<article id="spotlight">
-			<h2></h2>
-
-			<div>
-				<div class="innerWrapper">
-					<img src="http://fakeimg.pl/1000x200/00CED1/FFF/?text=big banner image">
-				</div>
-			</div>
-		</article>
-
+		<div class="innerWrapper">
+			<img src="http://fakeimg.pl/1000x200/00CED1/FFF/?text=big banner image">
+		</div>
 		<article id="mainColumn">
 			<div class="headerBar">
 				<h1>Agenda</h1>
@@ -166,7 +159,7 @@
 								<p>Rameau. Het theater van de liefde</p>
 								<div>
 									<time datetime="2013-11-02">Za 02.11.13 20.00</time>
-									<span>Concertzaal</span>
+									<span>Concertgebouw Brugge en Extra Muros</span>
 									<a class="addToWishlist added" href="#"><span class="noscr">Add to wishlist</span></a>
 									<a class="addToCart" href="#">Verder naar bestellen</a>
 								</div>
@@ -181,7 +174,7 @@
 						</article>
 					</div>
 				</li>
-				<li class="canceled large-12 columns">
+				<li class="noOrder large-12 columns">
 					<div class="innerWrapper">
 						<article>
 							<header>
@@ -204,6 +197,53 @@
 						</article>
 					</div>
 				</li>
+				<li class="3rdParty large-12 columns">
+					<div class="innerWrapper">
+						<article>
+							<header>
+								<h2>Trio Almaviva</h2>
+								<p>Beethoven en de Eerste Weense School</p>
+								<div>
+									<time datetime="2013-11-02">Za 02.11.13 20.00</time>
+									<span>Kamermuziekzaal</span>
+								</div>
+							</header>
+							<p>De liefde regeert, overal en altijd. De wereld van de barokopera is daarop zeker geen uitzondering, want of het nu gaat om goden of mensen, iedereen valt De liefde regeert, overal en altijd.<a class="more" href="#">...Lees meer</a></p>
+							<img width="140" height="140" src="img/3rdParty.png" alt="Ook in het concertgebouw">
+							<ul class="tag type2 inline-list">
+								<li><a href="#">Tags</a></li>
+								<li><a href="#">Con tempo</a></li>
+								<li><a href="#">Familievoorstelling</a></li>
+								<li><a href="#">too many tags</a></li>
+							</ul>
+						</article>
+					</div>
+				</li>
+				<li class="context noOrder large-12 columns">
+					<div class="innerWrapper">
+						<article>
+							<header>
+								<h2>Les ambassadeurs</h2>
+								<p>Rameau. Het theater van de liefde</p>
+								<div>
+									<time datetime="2013-11-02">Za 02.11.13 20.00</time>
+									<span>Concertzaal</span>
+									<a class="addToWishlist" href="#"><span class="noscr">Add to wishlist</span></a>
+									<span class="addToCart" href="#">Verkoop vanaf 12.03.14</span>
+								</div>
+							</header>
+							<p>De liefde regeert, overal en altijd. De wereld van de barokopera is daarop zeker geen uitzondering, want of het nu gaat om goden of mensen, iedereen valt De liefde regeert, overal en altijd.<a class="more" href="#">...Lees meer</a></p>
+							<div class="contextImgWrapper">
+								<img src="http://fakeimg.pl/140x140/00CED1/FFF/?text=sample"><span>Context</span>
+							</div>
+							<ul class="tag type2 inline-list">
+								<li><a href="#">Tags</a></li>
+								<li><a href="#">Con tempo</a></li>
+								<li><a href="#">Familievoorstelling</a></li>
+							</ul>
+						</article>
+					</div>
+				</li>
 			</ul>
 			<div class="innerWrapper more">
 				<a href="#">Toon meer</a>
@@ -211,7 +251,7 @@
 		</article>
 
 		<aside id="subColumn">
-			
+			<h4 class="noscr">Filter and more...</h4>
 			<section id="calendar" class="headingblock">
 				<h3>Kalender</h3>
 				<table>
@@ -443,6 +483,9 @@
 			src:'img/bg.jpg'
 		});
 	</script>-->
+	<script>
+		$(document).foundation();
+	</script>
 </body>
 </html>
 

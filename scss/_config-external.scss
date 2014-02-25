@@ -124,6 +124,36 @@ $dropdown-mobile-default-float: 0;
 $f-dropdown-content-padding: 0 10px;
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+$section-title-padding: .5em 1.5em .5em 0;
+$section-content-padding: .5em 0 0 0;
+$section-function-factor: 0;
+
+$section-title-color: $colorPrime;
+$section-title-color-active: $colorGrayScaleA;
+$section-title-bg: #fff;
+$section-title-bg-active: #fff;
+$section-title-bg-active-tabs: #fff;
+$section-title-bg-hover: #fff;
+
+$section-border-size: 0;
+$section-border-style: solid;
+$section-border-color: #fff;
+
+/* Font controls */
+$section-font-size: $smallFontsize;
+
+/* Control the color of the background and some size options */
+$section-content-bg: #fff;
+$section-vertical-nav-min-width: em-calc(200);
+$section-vertical-tabs-title-width: em-calc(200);
+$section-bottom-margin: em-calc(20);
+
+$title-selector: ".title";
+$content-selector: ".content";
+$active-region-selector: ".active";
+
 // Make sure border radius matches unless we want it different.
 
 // $global-radius: 3px;
@@ -218,7 +248,7 @@ $f-dropdown-content-padding: 0 10px;
 	// @import "foundation/components/progress-bars";
 	// @import "foundation/components/reveal";
 	// @import "foundation/components/side-nav";
-	// @import "foundation/components/section";
+ @import "foundation/components/section";
 	// @import "foundation/components/split-buttons";			// *requires components/buttons
 	// @import "foundation/components/sub-nav";
 	// @import "foundation/components/switch";

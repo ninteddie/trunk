@@ -44,7 +44,18 @@ body									{ min-width: 465px; }
 .tag.type2 a:hover						{ color: $colorGrayScaleG; background-color: $colorGrayScaleA; }
 .tag.type2 a:active						{ color: $colorGrayScaleG; background-color: $colorGrayScaleF; border-color: $colorGrayScaleF; }
 
-#agendaList .tag						{ position: absolute; top: 116px; overflow: hidden; }
+#agendaList .tag						{ position: absolute; top: 116px; height: 26px; overflow: hidden; }
+
+///////////////////////////////////////////////////////////////////////////////
+
+.addToWishlist							{ @include icon(heart, 1, $colorGrayScaleE); display: block; }
+.addToWishlist:hover,
+.addToWishlist:active,
+.addToWishlist.added					{ @include icon(heart, 1, $colorNav); }
+.addToCart:link,
+.addToCart:visited						{ @include button($colorPrime, $colorGrayScaleG, 10px); width: 100px; text-transform: uppercase; text-align: center; }
+.addToCart:hover,
+.addToCart:active						{ background-color: $colorGrayScaleD; }
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -107,13 +118,18 @@ nav a									{ font-family: 'avenir_lt_pro95_black'; font-size: $navFontsize; }
 #calendar label							{ font-family: 'avenir_lt_pro65_medium'; }
 #calendar label							{ font-size: $checkboxFontsize; }
 
-.tag a									{ font-family: "avenir_lt_pro85_heavy"; font-size: 10px; line-height: 1; text-transform: uppercase; }
+.tag a,
+#agendaList .contextImgWrapper span		{ font-family: "avenir_lt_pro85_heavy"; font-size: 10px; line-height: 1; text-transform: uppercase; }
 .tagBlock								{ font-family: "avenir_lt_pro85_heavy"; font-size: 18px; }
+
+.detailWrapper .title					{ font-family: 'avenir_lt_pro95_black'; font-size: $smallFontsize; /*text-transform: uppercase;*/ }
+
 
 .blockButton,
 #calendar .submitButton					{ font-family: 'avenir_lt_pro95_black'; text-transform: uppercase; }
 
-#agendaList header div					{ font-family: "avenir_lt_pro85_heavy"; font-size: $smallFontsize; line-height: 1.2; }
+#agendaList header div,
+.addToCart								{ font-family: "avenir_lt_pro85_heavy"; font-size: $smallFontsize; line-height: 1.2; }
 #agendaList header h2,
 #agendaList header p,
 #agendaList header h2					{ font-size: $listHeadingFontsize; line-height: 1.4; }
@@ -121,6 +137,12 @@ nav a									{ font-family: 'avenir_lt_pro95_black'; font-size: $navFontsize; }
 #agendaList article > p					{ font-size: $listPFontsize; }
 #agendaList + .more a					{ font-family: 'avenir_lt_pro95_black'; font-size: $smallFontsize; }
 #agendaList article > p .more			{ font-family: "avenir_lt_pro85_heavy"; }
+
+.detailWrapper .subColumn h3,
+.detailWrapper .subColumn .noscr + .headingStyle,
+.detailWrapper .subColumn .date ul		{ font-family: 'avenir_lt_pro65_medium'; font-size: $smallFontsize; display: block; line-height: 1.4; }
+.detailWrapper .subColumn .date time	{ font-family: "avenir_lt_pro85_heavy"; font-size: 26.5px; line-height: 1; color: $colorGrayScaleE; }
+.detailWrapper .subColumn .price ul		{ font-family: "avenir_lt_pro85_heavy"; font-size: 18px; line-height: 1.2; }
 
 h1										{ line-height: 1.1875; }
 h2										{ line-height: 1.1923; }
@@ -138,122 +160,140 @@ h5										{ line-height: 1.25; }
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-header[role="banner"]					{ width: 100%; height: $headerHeight; background-color: $colorGrayScaleG; z-index: 2; }
-header[role="banner"] .centerHelper		{ padding: 0 $column-gutter/2; @include clearfix; }
+header[role="banner"]							{ width: 100%; height: $headerHeight; background-color: $colorGrayScaleG; z-index: 2; }
+header[role="banner"] .centerHelper				{ padding: 0 $column-gutter/2; @include clearfix; }
 
-#logoAnchor								{ float: left; padding: ($headerHeight - $logoFontsize)/2 0; }
+#logoAnchor										{ float: left; padding: ($headerHeight - $logoFontsize)/2 0; }
 
-#userPanel								{ width: 400px; position: relative; float: right; font-size: $userPanelFontsize; @include clearfix; }
-#userPanel > section					{ @include clearfix; }
-#userPanel a							{ display: block; }
+#userPanel										{ width: 400px; position: relative; float: right; font-size: $userPanelFontsize; @include clearfix; }
+#userPanel > section							{ @include clearfix; }
+#userPanel a									{ display: block; }
 
-#languageSwitcher						{ float: right; }
-#languageSwitcher ul					{ margin: 10px -2px 10px 0; padding-left: 65px; }
-#languageSwitcher li					{ margin: 0; }
-#languageSwitcher li + li				{ border-left:  $colorGrayScaleE 1px solid; }
-#languageSwitcher .selected a			{ color: $colorGrayScaleE; }
-#languageSwitcher a						{ line-height: 1; padding: 0 4px; }
+#languageSwitcher								{ float: right; }
+#languageSwitcher ul							{ margin: 10px -2px 10px 0; padding-left: 65px; }
+#languageSwitcher li							{ margin: 0; }
+#languageSwitcher li + li						{ border-left:  $colorGrayScaleE 1px solid; }
+#languageSwitcher .selected a					{ color: $colorGrayScaleE; }
+#languageSwitcher a								{ line-height: 1; padding: 0 4px; }
 
-#profile								{ float: left; }
+#profile										{ float: left; }
 
-#cartAndWishlist						{ float: left; }
-#cartAndWishlist li						{ padding: 10px 0; }
-#cartAndWishlist li + li				{ border-top: $colorGrayScaleD 1px solid; }
-#cartAndWishlist li span				{ display: block; }
-#cartAndWishlist > ul					{ width: $headerDropdownWidth; margin-left: $headerDropdownTitleWidth - $headerDropdownWidth; }
-#cartAndWishlist > a					{ width: $headerDropdownTitleWidth; height: 30px; border: $colorGrayScaleF 1px solid; border-top: none; }
-#cartAndWishlist > a:before				{ width: 29px; height: 29px; line-height: 29px !important; display: inline-block; text-align: center; vertical-align: middle; }
+#cartAndWishlist								{ float: left; }
+#cartAndWishlist li								{ padding: 10px 0; }
+#cartAndWishlist li + li						{ border-top: $colorGrayScaleD 1px solid; }
+#cartAndWishlist li span						{ display: block; }
+#cartAndWishlist > ul							{ width: $headerDropdownWidth; margin-left: $headerDropdownTitleWidth - $headerDropdownWidth; }
+#cartAndWishlist > a							{ width: $headerDropdownTitleWidth; height: 30px; border: $colorGrayScaleF 1px solid; border-top: none; }
+#cartAndWishlist > a:before						{ width: 29px; height: 29px; line-height: 29px !important; display: inline-block; text-align: center; vertical-align: middle; }
 
 
 
 #winkelkarTitle,
 #winkelkarTitle.hasNoItem:before,
-#winkelkarTitle.hasNoItem .itemNumber	{ color: $colorPrime; }
+#winkelkarTitle.hasNoItem .itemNumber			{ color: $colorPrime; }
 #verlanglijstTitle,
 #verlanglijstTitle.hasNoItem:before,
-#verlanglijstTitle.hasNoItem .itemNumber{ color: $colorNav; }
+#verlanglijstTitle.hasNoItem .itemNumber		{ color: $colorNav; }
 
 
 
-#socialMedia							{ float: right; }
-#socialMedia li							{ width: 20px; height: 23px; }
-#socialMedia li + li					{ margin-left: 5px; }
-#socialMedia .icon-youtube				{ @include icon(youtube); color: $colorYoutube; }
-#socialMedia .icon-facebook				{ @include icon(facebook); color: $colorFacebook; }
-#socialMedia .icon-twitter				{ @include icon(twitter); color: $colorTwitter; }
-#socialMedia .icon:hover				{ color: $colorGrayScaleD; }
-#socialMedia .icon:active				{ color: $colorGrayScaleF; }
+#socialMedia									{ float: right; }
+#socialMedia li									{ width: 20px; height: 23px; }
+#socialMedia li + li							{ margin-left: 5px; }
+#socialMedia .icon-youtube						{ @include icon(youtube); color: $colorYoutube; }
+#socialMedia .icon-facebook						{ @include icon(facebook); color: $colorFacebook; }
+#socialMedia .icon-twitter						{ @include icon(twitter); color: $colorTwitter; }
+#socialMedia .icon:hover						{ color: $colorGrayScaleD; }
+#socialMedia .icon:active						{ color: $colorGrayScaleF; }
 
 #calendar table,
 #calendar caption,
-#calendar .innerWrapper					{ background-color: $colorGrayScaleB; }
-#calendar table							{ width: 100%; overflow: hidden; }
-#calendar caption						{ color: $colorGrayScaleG; height: 35px; vertical-align: middle; }
-#calendar caption span					{ line-height: 35px; }
-#calendar caption a:before				{ vertical-align: middle; }
+#calendar .innerWrapper							{ background-color: $colorGrayScaleB; }
+#calendar table									{ width: 100%; overflow: hidden; }
+#calendar caption								{ color: $colorGrayScaleG; height: 35px; vertical-align: middle; }
+#calendar caption span							{ line-height: 35px; }
+#calendar caption a:before						{ vertical-align: middle; }
 
 #calendar caption a:link,
-#calendar caption a:visited				{ color: $colorGrayScaleG; }
+#calendar caption a:visited						{ color: $colorGrayScaleG; }
 #calendar caption a:hover,
-#calendar caption a:active				{ color: $colorPrime; }
+#calendar caption a:active						{ color: $colorPrime; }
 
-#calendar caption .prev					{ @include icon(chevron14left, 1.3, inherit); display: inline; float: left; }
-#calendar caption .next					{ @include icon(chevron14right, 1.3, inherit); display: inline; float: right; }
+#calendar caption .prev							{ @include icon(chevron14left, 1.3, inherit); display: inline; float: left; }
+#calendar caption .next							{ @include icon(chevron14right, 1.3, inherit); display: inline; float: right; }
 
 #calendar caption,
-#calendar tbody							{ border-bottom: $colorGrayScaleA 1px solid; }
-#calendar thead							{ color: $colorGrayScaleG; }
+#calendar tbody									{ border-bottom: $colorGrayScaleA 1px solid; }
+#calendar thead									{ color: $colorGrayScaleG; }
 
-#calendar td							{ width: 40px; height: 40px; border: $colorGrayScaleA 1px solid; border-left: none; border-top: none; position: relative; }
-#calendar td time						{ position: relative; display: block; }
+#calendar td									{ width: 40px; height: 40px; border: $colorGrayScaleA 1px solid; border-left: none; border-top: none; position: relative; }
+#calendar td time								{ position: relative; display: block; }
 #calendar td a,
-#calendar td span						{ display: block; text-align: center; }
-#calendar td a							{ @include icon(dot, .4); }
-#calendar td a:before					{ position: absolute; left: 50%; top: 50%; margin-left: -3px; margin-top: 8px; }
+#calendar td span								{ display: block; text-align: center; }
+#calendar td a									{ @include icon(dot, .4); }
+#calendar td a:before							{ position: absolute; left: 50%; top: 50%; margin-left: -3px; margin-top: 8px; }
 
-#calendar td:hover						{ background-color: $colorGrayScaleE; }
-#calendar td.today						{ background-color: $colorGrayScaleD; }
-#calendar td.noEvent:hover				{ background: none; }
+#calendar td:hover								{ background-color: $colorGrayScaleE; }
+#calendar td.today								{ background-color: $colorGrayScaleD; }
+#calendar td.noEvent:hover						{ background: none; }
 
 #calendar td.noThisMonth a,
 #calendar td.noThisMonth a:before,
-#calendar td.noThisMonth span			{ color: $colorGrayScaleD; }
+#calendar td.noThisMonth span					{ color: $colorGrayScaleD; }
 
 #calendar td a,
-#calendar td span						{ color: $colorGrayScaleG; line-height: 39px; }
+#calendar td span								{ color: $colorGrayScaleG; line-height: 39px; }
 
-#calendar td a:before					{ color: $colorPrime; }
+#calendar td a:before							{ color: $colorPrime; }
 
 #calendar td:hover a:before,
-#calendar td.today a:before				{ color: $colorGrayScaleG; }
+#calendar td.today a:before						{ color: $colorGrayScaleG; }
 
 #calendar td.today a,
-#calendar td.today span					{ color: $colorGrayScaleA; }
+#calendar td.today span							{ color: $colorGrayScaleA; }
 
-#calendar fieldset						{ border: none; margin: 0; padding: 0; height: 200px; position: relative; }
+#calendar fieldset								{ border: none; margin: 0; padding: 0; height: 200px; position: relative; }
 #calendar legend,
-#calendar label							{ color: $colorGrayScaleF; }
+#calendar label									{ color: $colorGrayScaleF; }
 
-#calendar legend						{ width: 100%; padding-bottom: $innerPadding; border-bottom: $colorGrayScaleF 1px solid; }
+#calendar legend								{ width: 100%; padding-bottom: $innerPadding; border-bottom: $colorGrayScaleF 1px solid; }
 
-#calendar label							{ display: block; padding: 3px 0; cursor: pointer; }
+#calendar label									{ display: block; padding: 3px 0; cursor: pointer; }
 
-#calendar input							{ margin-right: 5px; }
+#calendar input									{ margin-right: 5px; }
 
-#calendar #toggleAll					{ margin-top: $innerPadding; margin-bottom: $innerPadding; }
+#calendar #toggleAll							{ margin-top: $innerPadding; margin-bottom: $innerPadding; }
 
-#calendar fieldset > div				{ position: absolute; }
+#calendar fieldset > div						{ position: absolute; }
 
-#calendar .posLeft						{ width: 120px; }
-#calendar .posMiddle					{ left: 136px; }
-#calendar .posRight						{ left: 200px; }
+#calendar .posLeft								{ width: 120px; }
+#calendar .posMiddle							{ left: 136px; }
+#calendar .posRight								{ left: 200px; }
 
-#calendar .submitButton					{ border: none; position: absolute; left: -200px; bottom: -70px; }
+#calendar .submitButton							{ border: none; position: absolute; left: -200px; bottom: -70px; }
 
-#calendar .tagBlock						{ background-color: $colorGrayScaleF; margin-top: $column-gutter*-1; }
+#calendar .tagBlock								{ background-color: $colorGrayScaleF; margin-top: $column-gutter*-1; }
 
+///////////////////////////////////////////////////////////////////////////////
 
+.section-container section:last-child .divider			{ display: none; }
 
+.detailWrapper .innerWrapper							{ @include clearfix; padding: $innerPadding*4; }
+.detailWrapper .mainColumn								{ float: left; width: 73.5%; padding-right: $innerPadding*2; }
+.detailWrapper .subColumn								{ float: right; width: 26.5%; }
+.detailWrapper hgroup									{ margin-bottom: 20px; }
+.detailWrapper .section-container .title:hover a		{ color: $colorGrayScaleD; }
+.detailWrapper .section-container .divider				{ position: absolute; top: 10%; right: .5em; vertical-align: middle; }
+.detailWrapper .section-container .divider span			{ display: block; line-height: 5px; @include icon(dot, .3, $colorGrayScaleE); }
+.detailWrapper .section-container .content p			{ border-top: $colorGrayScaleE 1px solid; padding-top: .5em; }
+.detailWrapper .section-container .content p:before		{ content: ""; display: block; height: .5em; }
+
+.detailWrapper .subColumn section						{ padding: $innerPadding 0; border-bottom: $colorGrayScaleE 1px solid; }
+.detailWrapper .subColumn ul							{ list-style: none; margin: 0; }
+.detailWrapper .subColumn .date time					{ display: block; margin-bottom: .4em; }
+.detailWrapper .subColumn .price .addToCart				{ position: relative; }
+
+///////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -284,6 +324,7 @@ header[role="banner"] .centerHelper		{ padding: 0 $column-gutter/2; @include cle
 #userName                   { min-width: 180px; }
 #userNameTitle              { color: $colorGrayScaleD; }
 ///////////////////////////////////////////////////////////////////////////////
+
 nav												{ z-index: 2; }
 nav .centerHelper								{ background: $colorNav; }
 nav ul											{ margin: 0; padding: 0 $column-gutter/2; @include clearfix; line-height: $menuHeight; list-style: none; }
@@ -294,20 +335,14 @@ nav a:visited									{ color: $colorGrayScaleG; }
 nav a:hover,
 nav a:active									{ color: $colorGrayScaleB; }
 
-
 ///////////////////////////////////////////////////////////////////////////////
 
-#mainWrapper							{ @include box-sizing(content-box);/* IE8 fix */ max-width: $mainWrapperMaxWidth; margin: auto; padding: 0 $column-gutter/2 $column-gutter $column-gutter/2; @include clearfix; }
+#mainWrapper									{ @include box-sizing(content-box);/* IE8 fix */ max-width: $mainWrapperMaxWidth; margin: auto; padding: 0 $column-gutter/2 $column-gutter $column-gutter/2; @include clearfix; }
 
-#spotlight								{  }
-
-
+#spotlight										{  }
 
 .concertList,
-.newsItemList {
-	list-style: none;
-	padding: 0;
-}
+.newsItemList									{ list-style: none; padding: 0; }
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -368,27 +403,24 @@ nav a:active									{ color: $colorGrayScaleB; }
 #agendaList article > p							{ margin-bottom: 0; line-height: 16px; height: 16px*3; position: relative; overflow: hidden; }
 #agendaList article > p .more 					{ position:absolute; bottom:0; right:0; padding-left: 70px; background: transparent url(../img/listEllipsisHelper.png) 0 0 repeat-y; @include icon(chevron14right, .8, inherit, after); }
 #agendaList article > p .more:after				{ position: relative; top: 3px; font-weight: bold; }
-#agendaList img									{ position: absolute; top: 0; left: 0; }
+#agendaList img,
+#agendaList .contextImgWrapper					{ width: 140px; height: 140px; position: absolute; top: 0; left: 0; }
 #agendaList header div							{ width: 100px; height: 140px; position: absolute; top: 0; left: 160px; }
 #agendaList header h2,
 #agendaList header p							{ @include ellipsis; }
 #agendaList header p							{ margin-bottom: 10px; }
-#agendaList .addToWishlist						{ @include icon(heart); display: block; color: $colorGrayScaleE; }
-#agendaList .addToWishlist:hover,
-#agendaList .addToWishlist:active,
-#agendaList .addToWishlist.added				{ color: $colorNav; }
-#agendaList .addToCart:link,
-#agendaList .addToCart:visited					{ @include button($colorPrime, $colorGrayScaleG, 10px); width: 100px; position: absolute; bottom: 0; text-transform: uppercase; text-align: center; }
-#agendaList .addToCart:hover,
-#agendaList .addToCart:active					{ background-color: $colorGrayScaleD; }
+
+.addToCart										{ position: absolute; bottom: 0; }
 
 #agendaList .added .addToCart:link,
 #agendaList .added .addToCart:visited			{ background-color: $colorGrayScaleD; }
 #agendaList .added .addToCart:hover				{ background-color: $colorGrayScaleE; }
 #agendaList .added .addToCart:active			{ background-color: $colorGrayScaleF; }
 
-#agendaList .canceled header					{ color: $colorGrayScaleE; }
-#agendaList .canceled .addToCart				{ @include button($colorGrayScaleG, $colorGrayScaleE, 10px); border: $colorGrayScaleE 1px solid; width: 100px; position: absolute; bottom: 0; text-align: center; }
+#agendaList .noOrder header						{ color: $colorGrayScaleE; }
+#agendaList .noOrder .addToCart					{ @include button($colorGrayScaleG, $colorGrayScaleE, 10px); border: $colorGrayScaleE 1px solid; width: 100px; position: absolute; bottom: 0; text-align: center; }
+
+#agendaList .contextImgWrapper span				{ position: absolute; bottom: 10%; left: 0; @include button($colorContext, $colorGrayScaleG, 10px); }
 
 #agendaList + .more								{ margin-right: $innerPadding*2; text-align: center; }
 #agendaList + .more a							{ @include icon(chevron14down, 1, inherit, after); text-transform: uppercase; }
@@ -396,8 +428,6 @@ nav a:active									{ color: $colorGrayScaleB; }
 
 ///////////////////////////////////////////////////////////////////////////////
 @import "_breakpoints.scss";
-
-
 @import "_modals.scss";
 
 #mainWrapper .detailWrapper 		{ background: #fff; min-height: 400px; width: 760px; margin: 2em auto 0 auto; }
