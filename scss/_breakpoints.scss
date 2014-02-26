@@ -6,24 +6,30 @@
 	#mainColumn									{ float: left; width: $mainColumnMaxWidth / $mainWrapperMaxWidth *100%; }
 	#subColumn									{ float: right; width: $subColumnMaxWidth / $mainWrapperMaxWidth *100%; }
 
+	.page #mainColumn							{ width: 800px / $mainWrapperMaxWidth *100%; max-width: 800px; }
+	.page #subColumn							{ width: 200px / $mainWrapperMaxWidth *100%; }
+
 }
 
 @media only screen and (min-width: 760px) and (max-width: 1039px) {
 	#userPanel									{ width: 260px; }
 	.centerHelper								{ width: $mainColumnMaxWidth - $column-gutter; }
 	#mainWrapper								{ width: $mainColumnMaxWidth - $column-gutter; }
-	#mainColumn									{ width: $mainColumnMaxWidth; }
+	#mainColumn,
+	.page #mainColumn							{ width: $mainColumnMaxWidth; }
 }
 
 @media only screen and (min-width: 655px) and (max-width: 759px) {
 	#userPanel									{ width: 260px; }
 	#mainWrapper								{ width: 600px; }
-	#mainColumn									{ width: 620px; }
+	#mainColumn,
+	.page #mainColumn							{ width: 620px; }
 }
 
 @media only screen and (max-width: 655px) {
 	#mainWrapper								{ width: 420px; }
-	#mainColumn									{ width: 440px; }
+	#mainColumn,
+	.page #mainColumn							{ width: 440px; }
 
 	#agendaList .innerWrapper					{ padding: 0 $innerPadding; }
 	#agendaList li:first-child .innerWrapper	{ padding-top: $innerPadding; }
