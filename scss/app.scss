@@ -97,6 +97,12 @@ a:active								{ color: $colorNav; }
 //
 ///////////////////////////////////////////////////////////////////////////////
 
+h1										{ line-height: 1.1875; margin-bottom: 20px; }
+h2										{ line-height: 1.1923; }
+h3										{ line-height: 1.1818; }
+h4										{ line-height: 1.2105; }
+h5										{ line-height: 1.25; }
+
 #logoAnchor h2							{ font-family: "avenir_lt_pro95_black"; font-size: $logoFontsize; letter-spacing: 1px; line-height: 1; text-transform: uppercase; }
 #logoAnchor span						{ font-family: "avenir_lt_pro65_medium"; }
 #userPanel a							{ font-family: "avenir_lt_pro85_heavy"; font-size: $userPanelFontsize;  }
@@ -107,8 +113,8 @@ a:active								{ color: $colorNav; }
 
 nav a									{ font-family: 'avenir_lt_pro95_black'; font-size: $navFontsize; }
 
-.headerBar	h1,
-.headerBar	span						{ font-family: 'avenir_lt_pro95_black'; font-size: $breadcrumbFontsize; line-height: 1; text-transform: uppercase; }
+.headerBar h1,
+.headerBar span							{ font-family: 'avenir_lt_pro95_black'; font-size: $breadcrumbFontsize; line-height: 1; text-transform: uppercase; }
 
 .headingblock p							{ font-family: 'avenir_lt_pro45_book'; font-size: $blockPFontsize; line-height: 1.2; }
 .headingblock h3,
@@ -144,12 +150,7 @@ nav a									{ font-family: 'avenir_lt_pro95_black'; font-size: $navFontsize; }
 .detailWrapper .subColumn .date time	{ font-family: "avenir_lt_pro85_heavy"; font-size: 26.5px; line-height: 1; color: $colorGrayScaleE; }
 .detailWrapper .subColumn .price ul		{ font-family: "avenir_lt_pro85_heavy"; font-size: 18px; line-height: 1.2; }
 
-h1										{ line-height: 1.1875; }
-h2										{ line-height: 1.1923; }
-h3										{ line-height: 1.1818; }
-h4										{ line-height: 1.2105; }
-h5										{ line-height: 1.25; }
-
+.introduction							{ font-family: "century_schoolbook_proregular"; font-size: 20px; line-height: 1.25; }
 
 
 
@@ -323,21 +324,35 @@ header[role="banner"] .centerHelper				{ padding: 0 $column-gutter/2; @include c
 
 #userName                   { min-width: 180px; }
 #userNameTitle              { color: $colorGrayScaleD; }
+
 ///////////////////////////////////////////////////////////////////////////////
 
-nav												{ z-index: 2; }
-nav .centerHelper								{ background: $colorNav; }
-nav ul											{ margin: 0; padding: 0 $column-gutter/2; @include clearfix; line-height: $menuHeight; list-style: none; }
-nav li											{ background: $colorNav; }
-nav a											{ display: block; padding: 0 $column-gutter/2; text-transform: uppercase; }
+nav									{ z-index: 1; position: relative; }
+nav .centerHelper					{ background: $colorNav; }
+nav ul								{ margin: 0; padding: 0 $column-gutter/2; @include clearfix; line-height: $menuHeight; list-style: none; }
+nav li								{ background: $colorNav; }
+nav a								{ display: block; padding: 0 $column-gutter/2; text-transform: uppercase; }
 nav a:link,
-nav a:visited									{ color: $colorGrayScaleG; }
+nav a:visited						{ color: $colorGrayScaleG; }
 nav a:hover,
-nav a:active									{ color: $colorGrayScaleB; }
+nav a:active						{ color: $colorGrayScaleB; }
+
+
+.side-nav 							{ background: $colorGrayScaleB; }
+.side-nav li 						{ padding: 0 0 0 $innerPadding; text-transform: uppercase; line-height: 1.25; }
+.side-nav li li 					{ text-transform: none; border-bottom: none; }
+.side-nav a,
+.side-nav a:link,
+.side-nav a:visited					{ color: $colorGrayScaleE; border-bottom: 1px solid $colorGrayScaleE; padding-bottom: .5em; }
+.side-nav a:hover,
+.side-nav a:active					{ color: $colorGrayScaleF; }
+.side-nav li.active > a:first-child { color: $colorGrayScaleG; }
+.side-nav li.active > ul 			{ color: $colorGrayScaleG; border-bottom: 1px solid $colorGrayScaleE; }
+.side-nav .side-nav li a 			{ border: none; }
 
 ///////////////////////////////////////////////////////////////////////////////
 
-#mainWrapper									{ @include box-sizing(content-box);/* IE8 fix */ max-width: $mainWrapperMaxWidth; margin: auto; padding: 0 $column-gutter/2 $column-gutter $column-gutter/2; @include clearfix; }
+#mainWrapper									{ @include box-sizing(content-box);/* IE8 fix */ @include clearfix; margin: auto; padding: 0 $column-gutter/2 $column-gutter $column-gutter/2; max-width: $mainWrapperMaxWidth; position: relative; z-index: 1; }
 
 #spotlight										{  }
 

@@ -320,12 +320,40 @@ $iconSize: 20px;                            //icons have a base size at which th
     @else if $icon == chevron14left     { content: "\e618"; }
     @else if $icon == chevron14down     { content: "\e619"; }
     @else if $icon == cart              { content: "\e61a"; }
+    @else if $icon == circle            { content: "\e61b"; }
+    @else if $icon == pdfbg             { content: "\e61c"; }
     @else if $icon == required          { content: "*"; }
     @else { content: "error" }
 }
 
 @mixin icon($icon, $size: 1, $color: inherit, $location: before) {
-    @if $location == before {
+    @if $icon == pdf {
+      position: relative;
+      &:before,
+      &:after { 
+        @include iconReset;
+        font-size: $size * $iconSize;
+        position: absolute; top: 0; left: 0; // stack before and after on top of each other
+      }
+      &:before  { @include iconSet(pdfbg); color: #fff; }
+      &:after   { @include iconSet($icon); color: $color; }
+    } @else if $icon == youtube
+          or $icon == vimeo
+          or $icon == twitter
+          or $icon == tumblr
+          or $icon == spotify
+          or $icon == linkedin
+          or $icon == facebook {
+      position: relative;
+      &:before,
+      &:after { 
+        @include iconReset;
+        font-size: $size * $iconSize;
+        position: absolute; top: 0; left: 0; // stack before and after on top of each other
+      }
+      &:before  { @include iconSet(circle); color: #fff; }
+      &:after   { @include iconSet($icon); color: $color; }
+    } @else if $location == before {
         &:before {
             @include iconReset;
             @include iconSet($icon);
