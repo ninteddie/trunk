@@ -93,6 +93,7 @@ $mainColumnMaxWidth: 720px;
 $subColumnMaxWidth: 280px;
 $headerHeight: 80px;
 $menuHeight: 40px;
+$headerBarHeight: 35px;
 $innerPadding: 10px;				// blocks' padding
 
 $headerDropdownTitleWidth: 180px;   // #winkelkarTitle, #verlanglijstTitle width
@@ -225,6 +226,7 @@ $h4Fontsize:			19px;
 $h5Fontsize:			16px;
 
 $pFontsize:				16px;
+$infoFontsize:			14px;
 $qFontsize:				20px;
 
 $listHeadingFontsize:	20px;
@@ -333,7 +335,7 @@ $iconSize: 20px;                            //icons have a base size at which th
       &:after { 
         @include iconReset;
         font-size: $size * $iconSize;
-        position: absolute; top: 0; left: 0; // stack before and after on top of each other
+        position: absolute; bottom: 0; right: -.12em; // stack before and after on top of each other
       }
       &:before  { @include iconSet(pdfbg); color: #fff; }
       &:after   { @include iconSet($icon); color: $color; }

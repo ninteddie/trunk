@@ -5,62 +5,70 @@
   src: url("../fonts/linotype_-_avenirltpro-book-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/linotype_-_avenirltpro-book-webfont.woff") format("woff"), url("../fonts/linotype_-_avenirltpro-book-webfont.ttf") format("truetype"), url("../fonts/linotype_-_avenirltpro-book-webfont.svg#avenir_lt_pro45_book") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 @font-face {
   font-family: 'avenir_lt_pro55_roman';
   src: url("../fonts/linotype_-_avenirltpro-roman-webfont.eot");
   src: url("../fonts/linotype_-_avenirltpro-roman-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/linotype_-_avenirltpro-roman-webfont.woff") format("woff"), url("../fonts/linotype_-_avenirltpro-roman-webfont.ttf") format("truetype"), url("../fonts/linotype_-_avenirltpro-roman-webfont.svg#avenir_lt_pro55_roman") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 @font-face {
   font-family: 'avenir_lt_pro85_heavy';
   src: url("../fonts/linotype_-_avenirltpro-heavy-webfont.eot");
   src: url("../fonts/linotype_-_avenirltpro-heavy-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/linotype_-_avenirltpro-heavy-webfont.woff") format("woff"), url("../fonts/linotype_-_avenirltpro-heavy-webfont.ttf") format("truetype"), url("../fonts/linotype_-_avenirltpro-heavy-webfont.svg#avenir_lt_pro85_heavy") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 @font-face {
   font-family: 'avenir_lt_pro65_medium';
   src: url("../fonts/linotype_-_avenirltpro-medium-webfont.eot");
   src: url("../fonts/linotype_-_avenirltpro-medium-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/linotype_-_avenirltpro-medium-webfont.woff") format("woff"), url("../fonts/linotype_-_avenirltpro-medium-webfont.ttf") format("truetype"), url("../fonts/linotype_-_avenirltpro-medium-webfont.svg#avenir_lt_pro65_medium") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 @font-face {
   font-family: 'avenir_lt_pro95_black';
   src: url("../fonts/linotype_-_avenirltpro-black-webfont.eot");
   src: url("../fonts/linotype_-_avenirltpro-black-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/linotype_-_avenirltpro-black-webfont.woff") format("woff"), url("../fonts/linotype_-_avenirltpro-black-webfont.ttf") format("truetype"), url("../fonts/linotype_-_avenirltpro-black-webfont.svg#avenir_lt_pro95_black") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 @font-face {
   font-family: 'century_schoolbook_proregular';
   src: url("../fonts/monotype__-_centuryschoolbookpro-webfont.eot");
   src: url("../fonts/monotype__-_centuryschoolbookpro-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/monotype__-_centuryschoolbookpro-webfont.woff") format("woff"), url("../fonts/monotype__-_centuryschoolbookpro-webfont.ttf") format("truetype"), url("../fonts/monotype__-_centuryschoolbookpro-webfont.svg#century_schoolbook_proregular") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 @font-face {
   font-family: 'century_schoolbook_probold';
   src: url("../fonts/monotype__-_centuryschoolbookpro-bold-webfont.eot");
   src: url("../fonts/monotype__-_centuryschoolbookpro-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/monotype__-_centuryschoolbookpro-bold-webfont.woff") format("woff"), url("../fonts/monotype__-_centuryschoolbookpro-bold-webfont.ttf") format("truetype"), url("../fonts/monotype__-_centuryschoolbookpro-bold-webfont.svg#century_schoolbook_probold") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 @font-face {
   font-family: 'century_schoolbook_proitalic';
   src: url("../fonts/monotype__-_centuryschoolbookpro-italic-webfont.eot");
   src: url("../fonts/monotype__-_centuryschoolbookpro-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/monotype__-_centuryschoolbookpro-italic-webfont.woff") format("woff"), url("../fonts/monotype__-_centuryschoolbookpro-italic-webfont.ttf") format("truetype"), url("../fonts/monotype__-_centuryschoolbookpro-italic-webfont.svg#century_schoolbook_proitalic") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 @font-face {
   font-family: 'concertgebouw_iconfont';
   src: url("../fonts/concertgebouw.eot");
   src: url("../fonts/concertgebouw.eot?#iefix") format("embedded-opentype"), url("../fonts/concertgebouw.woff") format("woff"), url("../fonts/concertgebouw.ttf") format("truetype"), url("../fonts/concertgebouw.svg#concertgebouw") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 /* We use these to controls height and width styles. */
 /* We use this to control the background color */
 /* We use this to set the border styles for dropdowns. */
 /* We use these to style the triangle pip. */
 /* We use these to control styles for the list elements. */
 /* We use this to control the styles for when the dropdown has custom content. */
-/* Font controls */
-/* Control the color of the background and some size options */
+/* Graceful Loading Wrapper and preloader */
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -1002,24 +1010,28 @@ select {
 
   to {
     -webkit-transform: rotate(360deg); } }
+
 @-moz-keyframes rotate {
   from {
     -moz-transform: rotate(0deg); }
 
   to {
     -moz-transform: rotate(360deg); } }
+
 @-o-keyframes rotate {
   from {
     -o-transform: rotate(0deg); }
 
   to {
     -o-transform: rotate(360deg); } }
+
 @keyframes rotate {
   from {
     transform: rotate(0deg); }
 
   to {
     transform: rotate(360deg); } }
+
 /* Orbit Graceful Loading */
 .slideshow-wrapper {
   position: relative; }
@@ -1072,7 +1084,7 @@ select {
   overflow: hidden;
   width: 100%;
   position: relative;
-  background: whitesmoke; }
+  background: white; }
   .orbit-container .orbit-slides-container {
     list-style: none;
     margin: 0;
@@ -1102,7 +1114,7 @@ select {
     left: 10px;
     font-size: 12px;
     color: white;
-    background: transparent;
+    background: rgba(0, 0, 0, 0);
     z-index: 10; }
     .orbit-container .orbit-slide-number span {
       font-weight: 700;
@@ -1144,7 +1156,7 @@ select {
     position: absolute;
     top: 50%;
     margin-top: -25px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: transparent;
     width: 50px;
     height: 60px;
     line-height: 50px;
@@ -1153,7 +1165,7 @@ select {
     z-index: 10; }
     .orbit-container .orbit-prev:hover,
     .orbit-container .orbit-next:hover {
-      background-color: rgba(0, 0, 0, 0.6); }
+      background-color: transparent; }
     .orbit-container .orbit-prev > span,
     .orbit-container .orbit-next > span {
       position: absolute;
@@ -1189,16 +1201,16 @@ select {
   top: 10px; }
   .orbit-bullets li {
     display: block;
-    width: 0.75em;
-    height: 0.75em;
-    background: #999999;
+    width: 0.625em;
+    height: 0.625em;
+    background: white;
     float: left;
     margin-right: 6px;
-    border: solid 1px #555555;
+    border: solid 1px #999999;
     -webkit-border-radius: 1000px;
     border-radius: 1000px; }
     .orbit-bullets li.active {
-      background: #555555; }
+      background: #999999; }
     .orbit-bullets li:last-child {
       margin-right: 0; }
 
@@ -2261,6 +2273,7 @@ blockquote p {
 
   @page {
     margin: 0.5cm; }
+
   p,
   h2,
   h3 {
@@ -2419,6 +2432,7 @@ body {
   background-color: #666666; }
 
 .pdfWrapper {
+  display: inline-block;
   position: relative; }
   .pdfWrapper:before, .pdfWrapper:after {
     font-family: 'concertgebouw_iconfont';
@@ -2432,14 +2446,71 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-size: 50px;
     position: absolute;
-    top: 0;
-    left: 0; }
+    bottom: 0;
+    right: -.12em; }
   .pdfWrapper:before {
     content: "\e61c";
     color: #fff; }
   .pdfWrapper:after {
     content: "\e60b";
     color: red; }
+
+.slideshow {
+  margin-bottom: 20px; }
+
+.slideshow .orbit-bullets {
+  position: absolute;
+  margin: 0;
+  top: 10px;
+  right: 10px;
+  z-index: 99; }
+
+.slideshow .orbit-bullets li {
+  border: #999999 1px solid;
+  border: none;
+  cursor: pointer; }
+
+.slideshow .orbit-prev {
+  left: 1em; }
+
+.slideshow .orbit-next {
+  right: 1em; }
+
+.slideshow .orbit-prev span {
+  border: none;
+  text-indent: 0 !important; }
+  .slideshow .orbit-prev span:before {
+    font-family: 'concertgebouw_iconfont';
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e614";
+    font-size: 50px;
+    color: inherit; }
+
+.slideshow .orbit-next span {
+  border: none;
+  text-indent: 0 !important;
+  margin-left: 0;
+  left: auto; }
+  .slideshow .orbit-next span:before {
+    font-family: 'concertgebouw_iconfont';
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e613";
+    font-size: 50px;
+    color: inherit; }
 
 a:link,
 a:visited {
@@ -2517,52 +2588,97 @@ a:active {
 .inlineCenterWrapper {
   text-align: center; }
 
+h1, h2, h3, h4, h5 {
+  font-family: 'avenir_lt_pro85_heavy'; }
+
 h1 {
-  line-height: 1.1875;
-  margin-bottom: 20px; }
+  font-size: 32px;
+  line-height: 1.1875; }
 
 h2 {
+  font-size: 26px;
   line-height: 1.1923; }
 
 h3 {
+  font-size: 22px;
   line-height: 1.1818; }
 
 h4 {
-  line-height: 1.2105; }
+  font-size: 19px;
+  line-height: 1.1205; }
 
 h5 {
-  line-height: 1.25; }
+  font-size: 16px;
+  line-height: 1.2500; }
+
+p {
+  font-family: 'avenir_lt_pro55_roman';
+  font-size: 16px;
+  line-height: 1.3125;
+  color: #333333; }
+
+.richTxt .intro {
+  font-size: 16px; }
+
+.richTxt b {
+  font-family: 'avenir_lt_pro85_heavy';
+  font-weight: normal; }
+
+.richTxt .info {
+  font-size: 14px;
+  color: black; }
+
+.richTxt.programList ul,
+.richTxt.programList h4 {
+  font-family: 'century_schoolbook_proregular';
+  font-size: 16px;
+  line-height: 1.2;
+  color: black;
+  list-style: none; }
+
+.richTxt.programList h4:after {
+  content: '__';
+  display: block;
+  margin-bottom: 1em; }
+
+.richTxt.programList b {
+  font-family: 'century_schoolbook_probold';
+  font-weight: normal; }
+
+.richTxt.programList em {
+  font-family: 'century_schoolbook_proitalic';
+  font-style: normal; }
 
 #logoAnchor h2 {
-  font-family: "avenir_lt_pro95_black";
+  font-family: 'avenir_lt_pro95_black';
   font-size: 23px;
   letter-spacing: 1px;
   line-height: 1;
   text-transform: uppercase; }
 
 #logoAnchor span {
-  font-family: "avenir_lt_pro65_medium"; }
+  font-family: 'avenir_lt_pro65_medium'; }
 
 #userPanel a {
-  font-family: "avenir_lt_pro85_heavy";
+  font-family: 'avenir_lt_pro85_heavy';
   font-size: 13px; }
 
 #languageSwitcher a {
   font-size: 12px; }
 
 #cartAndWishlist time {
-  font-family: "avenir_lt_pro95_black";
+  font-family: 'avenir_lt_pro95_black';
   font-size: 12px;
   line-height: 1.2;
   color: black; }
 
 #cartAndWishlist .title {
-  font-family: "avenir_lt_pro85_heavy";
+  font-family: 'avenir_lt_pro85_heavy';
   line-height: 1.2;
   color: black; }
 
 #cartAndWishlist .artist {
-  font-family: "avenir_lt_pro85_heavy";
+  font-family: 'avenir_lt_pro85_heavy';
   font-size: 12px;
   line-height: 1.2;
   color: #666666; }
@@ -2591,21 +2707,26 @@ nav a {
   text-transform: uppercase; }
 
 #calendar td,
-#calendar label {
+#calendar label,
+.detailWrapper .quickLink a {
   font-family: 'avenir_lt_pro65_medium'; }
+
+.detailWrapper .quickLink a {
+  font-size: 13px;
+  line-height: 1.2; }
 
 #calendar label {
   font-size: 13px; }
 
 .tag a,
 #agendaList .contextImgWrapper span {
-  font-family: "avenir_lt_pro85_heavy";
+  font-family: 'avenir_lt_pro85_heavy';
   font-size: 10px;
   line-height: 1;
   text-transform: uppercase; }
 
 .tagBlock {
-  font-family: "avenir_lt_pro85_heavy";
+  font-family: 'avenir_lt_pro85_heavy';
   font-size: 18px; }
 
 .detailWrapper .title {
@@ -2620,7 +2741,7 @@ nav a {
 
 #agendaList header div,
 .addToCart {
-  font-family: "avenir_lt_pro85_heavy";
+  font-family: 'avenir_lt_pro85_heavy';
   font-size: 12px;
   line-height: 1.2; }
 
@@ -2643,29 +2764,43 @@ nav a {
   font-size: 12px; }
 
 #agendaList article > p .more {
-  font-family: "avenir_lt_pro85_heavy"; }
+  font-family: 'avenir_lt_pro85_heavy'; }
+
+.detailWrapper .richTxt h4 {
+  margin: .5em 0; }
+
+.detailWrapper h1 + h3 {
+  margin-top: .5em; }
 
 .detailWrapper .subColumn h3,
 .detailWrapper .subColumn .noscr + .headingStyle,
 .detailWrapper .subColumn .date ul {
   font-family: 'avenir_lt_pro65_medium';
   font-size: 12px;
+  margin-bottom: .3em;
   display: block;
   line-height: 1.4; }
 
 .detailWrapper .subColumn .date time {
-  font-family: "avenir_lt_pro85_heavy";
+  font-family: 'avenir_lt_pro85_heavy';
   font-size: 26.5px;
   line-height: 1;
   color: #999999; }
 
 .detailWrapper .subColumn .price ul {
-  font-family: "avenir_lt_pro85_heavy";
+  font-family: 'avenir_lt_pro85_heavy';
   font-size: 18px;
   line-height: 1.2; }
 
+.detailWrapper .serviceLink a {
+  font-family: 'avenir_lt_pro85_heavy'; }
+
+.detailWrapper .serviceLink span {
+  font-family: 'avenir_lt_pro65_medium';
+  font-size: 12px; }
+
 .introduction {
-  font-family: "century_schoolbook_proregular";
+  font-family: 'century_schoolbook_proregular';
   font-size: 20px;
   line-height: 1.25; }
 
@@ -3049,12 +3184,46 @@ header[role="banner"] .centerHelper {
   background-color: #cccccc;
   margin-top: -20px; }
 
-.section-container section:last-child .divider {
+.divider {
+  position: absolute;
+  top: 10%;
+  right: .5em;
+  vertical-align: middle; }
+
+.quickLink .divider {
+  top: -25%; }
+
+.divider span {
+  display: block;
+  line-height: 5px; }
+  .divider span:before {
+    font-family: 'concertgebouw_iconfont';
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e611";
+    font-size: 6px;
+    color: #999999; }
+
+.section-container section:last-child .divider,
+.quickLink li:last-child .divider {
   display: none; }
+
+#mainWrapper .detailWrapper {
+  background: #fff;
+  min-height: 400px;
+  width: 760px;
+  margin: 2em auto 0 auto; }
 
 .detailWrapper .innerWrapper {
   *zoom: 1;
-  padding: 40px; }
+  padding: 40px;
+  padding-bottom: 75px; }
   .detailWrapper .innerWrapper:before, .detailWrapper .innerWrapper:after {
     content: " ";
     display: table; }
@@ -3076,34 +3245,11 @@ header[role="banner"] .centerHelper {
 .detailWrapper .section-container .title:hover a {
   color: #666666; }
 
-.detailWrapper .section-container .divider {
-  position: absolute;
-  top: 10%;
-  right: .5em;
-  vertical-align: middle; }
-
-.detailWrapper .section-container .divider span {
-  display: block;
-  line-height: 5px; }
-  .detailWrapper .section-container .divider span:before {
-    font-family: 'concertgebouw_iconfont';
-    font-weight: normal;
-    font-style: normal;
-    font-variant: normal;
-    line-height: 1;
-    speak: none;
-    text-transform: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    content: "\e611";
-    font-size: 6px;
-    color: #999999; }
-
-.detailWrapper .section-container .content p {
+.detailWrapper .section-container .content > div {
   border-top: #999999 1px solid;
   padding-top: .5em; }
 
-.detailWrapper .section-container .content p:before {
+.detailWrapper .section-container .content > div:before {
   content: "";
   display: block;
   height: .5em; }
@@ -3122,6 +3268,57 @@ header[role="banner"] .centerHelper {
 
 .detailWrapper .subColumn .price .addToCart {
   position: relative; }
+
+.detailWrapper .headerBar {
+  width: 100%;
+  position: absolute;
+  bottom: 0; }
+
+.detailWrapper .closeModal {
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0; }
+  .detailWrapper .closeModal:before {
+    font-family: 'concertgebouw_iconfont';
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e603";
+    font-size: 20px;
+    color: inherit; }
+
+.detailWrapper .quickLink {
+  width: 100%;
+  float: left;
+  margin-top: 40px;
+  text-align: center;
+  border: #cccccc 1px solid; }
+
+.detailWrapper .quickLink .inline-list {
+  margin: 0;
+  display: block; }
+
+.detailWrapper .quickLink .inline-list li {
+  float: none;
+  margin-left: 0;
+  padding-right: 1.5em;
+  display: inline-block;
+  position: relative; }
+
+#mainWrapper .detailWrapper.noModal {
+  width: auto; }
+
+.detailWrapper.noModal .innerWrapper {
+  padding: 20px; }
+
+.detailWrapper.noModal .headerBar {
+  position: static; }
 
 #winkelkarTitle .itemNumber,
 #verlanglijstTitle .itemNumber {
@@ -3463,7 +3660,8 @@ nav a:active {
   nav li {
     float: left; }
 
-  #mainColumn {
+  #mainColumn,
+  .detailWrapper.noModal .mainColumn {
     float: left;
     width: 72%; }
 
@@ -3597,12 +3795,6 @@ body.modalOpen {
     left: 40px;
     overflow: auto;
     margin: 0 auto; }
-
-#mainWrapper .detailWrapper {
-  background: #fff;
-  min-height: 400px;
-  width: 760px;
-  margin: 2em auto 0 auto; }
 
 @media only screen and (max-width: 1039px) {
   #mainWrapper .detailWrapper {
