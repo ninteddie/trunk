@@ -3379,10 +3379,10 @@ header[role="banner"] .centerHelper {
 #mainWrapper .detailWrapper.noModal {
   width: auto; }
 
-.detailWrapper.noModal .innerWrapper {
+#mainWrapper .detailWrapper.noModal .innerWrapper {
   padding: 20px; }
 
-.detailWrapper.noModal .headerBar {
+#mainWrapper .detailWrapper.noModal .headerBar {
   position: static; }
 
 #winkelkarTitle .itemNumber,

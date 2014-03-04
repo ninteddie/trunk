@@ -354,8 +354,8 @@ header[role="banner"] .centerHelper				{ padding: 0 $column-gutter/2; @include c
 .detailWrapper .quickLink .inline-list li				{ float: none; margin-left: 0; padding-right: 1.5em; display: inline-block; position: relative; }
 
 #mainWrapper .detailWrapper.noModal						{ width: auto; }
-.detailWrapper.noModal .innerWrapper					{ padding: $innerPadding*2; }
-.detailWrapper.noModal .headerBar						{ position: static; }
+#mainWrapper .detailWrapper.noModal .innerWrapper		{ padding: $innerPadding*2; }
+#mainWrapper .detailWrapper.noModal .headerBar			{ position: static; }
 
 
 
