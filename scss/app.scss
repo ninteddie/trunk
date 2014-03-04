@@ -56,8 +56,13 @@ body									{ min-width: 465px; }
 .addToCart:visited						{ @include button($colorPrime, $colorGrayScaleG, 10px); width: 100px; text-transform: uppercase; text-align: center; }
 .addToCart:hover,
 .addToCart:active						{ background-color: $colorGrayScaleD; }
+
 .more 									{ position:absolute; bottom:0; right:0; padding-left: 70px; background: transparent url(../img/listEllipsisHelper.png) 0 0 repeat-y; @include icon(chevron14right, .8, inherit, after); }
 .more:after								{ position: relative; top: 3px; font-weight: bold; }
+
+.ajaxMore								{ margin-right: $innerPadding*2; text-align: center; }
+.ajaxMore a								{ @include icon(chevron14down, 1, inherit, after); text-transform: uppercase; }
+.ajaxMore a:after						{ vertical-align: middle; position: relative; top: -1px; left: 2px; font-weight: bold; }
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -109,7 +114,12 @@ a:active								{ color: $colorNav; }
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-h1,h2,h3,h4,h5							{ font-family: 'avenir_lt_pro85_heavy'; }
+h1,h2,h3,h4,h5,
+.more,
+.richTxt b,
+.tag a,.tagBlock span,
+.contextImgWrapper span					{ font-family: 'avenir_lt_pro85_heavy'; }
+
 h1										{ font-size: $h1Fontsize; line-height: 1.1875; }
 h2										{ font-size: $h2Fontsize; line-height: 1.1923; }
 h3										{ font-size: $h3Fontsize; line-height: 1.1818; }
@@ -118,7 +128,7 @@ h5										{ font-size: $h5Fontsize; line-height: 1.2500; }
 
 p										{ font-family: 'avenir_lt_pro55_roman'; font-size: $pFontsize; line-height: 1.3125; color: $colorGrayScaleC; }
 .richTxt .intro							{ font-size: $pFontsize; }
-.richTxt b								{ font-family: 'avenir_lt_pro85_heavy'; font-weight: normal; }
+.richTxt b								{ font-weight: normal; }
 .richTxt .info							{ font-size: $infoFontsize; color: $colorGrayScaleA; }
 
 .richTxt.programList ul,
@@ -151,8 +161,8 @@ nav a									{ font-family: 'avenir_lt_pro95_black'; font-size: $navFontsize; }
 #calendar label							{ font-size: $checkboxFontsize; }
 
 .tag a,
-#agendaList .contextImgWrapper span		{ font-family: 'avenir_lt_pro85_heavy'; font-size: 10px; line-height: 1; text-transform: uppercase; }
-.tagBlock								{ font-family: 'avenir_lt_pro85_heavy'; font-size: 18px; }
+#agendaList .contextImgWrapper span		{ font-size: 10px; line-height: 1; text-transform: uppercase; }
+.tagBlock								{ font-size: 18px; }
 
 .detailWrapper .title					{ font-family: 'avenir_lt_pro95_black'; font-size: $smallFontsize; /*text-transform: uppercase;*/ }
 
@@ -167,9 +177,8 @@ nav a									{ font-family: 'avenir_lt_pro95_black'; font-size: $navFontsize; }
 #agendaList header h2					{ font-size: $listHeadingFontsize; line-height: 1.4; }
 #agendaList header p					{ font-size: $listSubFontsize; line-height: 1.2; color: $colorGrayScaleD; }
 #agendaList article > p					{ font-size: $listPFontsize; }
-#agendaList + .more a					{ font-family: 'avenir_lt_pro95_black'; font-size: $smallFontsize; }
 
-.more									{ font-family: 'avenir_lt_pro85_heavy'; }
+.ajaxMore a								{ font-family: 'avenir_lt_pro95_black'; font-size: $smallFontsize; }
 
 .programma #mainColumn > header h1,
 .programma #mainColumn h2				{ font-size: 24px; line-height: 1.2; }
@@ -494,10 +503,6 @@ nav a:active						{ color: $colorGrayScaleB; }
 #agendaList .noOrder .addToCart					{ @include button($colorGrayScaleG, $colorGrayScaleE, 10px); border: $colorGrayScaleE 1px solid; width: 100px; position: absolute; bottom: 0; text-align: center; }
 
 #agendaList .contextImgWrapper span				{ position: absolute; bottom: 10%; left: 0; @include button($colorContext, $colorGrayScaleG, 10px); }
-
-#agendaList + .more								{ margin-right: $innerPadding*2; text-align: center; }
-#agendaList + .more a							{ @include icon(chevron14down, 1, inherit, after); text-transform: uppercase; }
-#agendaList + .more a:after						{ vertical-align: middle; position: relative; top: -1px; left: 2px; font-weight: bold; }
 
 ///////////////////////////////////////////////////////////////////////////////
 
