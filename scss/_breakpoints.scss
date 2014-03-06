@@ -3,7 +3,8 @@
 	.centerHelper								{ width: $mainWrapperMaxWidth + $column-gutter; }
 	nav .centerHelper							{ width: $mainWrapperMaxWidth; height: $menuHeight; margin-top: $headerHeight; }
 	nav li										{ float: left; }
-	#mainColumn									{ float: left; width: $mainColumnMaxWidth / $mainWrapperMaxWidth *100%; }
+	#mainColumn,
+	.detailWrapper.noModal .mainColumn			{ float: left; width: $mainColumnMaxWidth / $mainWrapperMaxWidth *100%; }
 	#subColumn									{ float: right; width: $subColumnMaxWidth / $mainWrapperMaxWidth *100%; }
 
 	.page #mainColumn							{ width: 800px / $mainWrapperMaxWidth *100%; max-width: 800px; }

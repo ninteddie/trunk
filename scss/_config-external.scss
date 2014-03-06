@@ -141,10 +141,8 @@ $section-border-size: 0;
 $section-border-style: solid;
 $section-border-color: #fff;
 
-/* Font controls */
 $section-font-size: $smallFontsize;
 
-/* Control the color of the background and some size options */
 $section-content-bg: #fff;
 $section-vertical-nav-min-width: em-calc(200);
 $section-vertical-tabs-title-width: em-calc(200);
@@ -153,6 +151,23 @@ $section-bottom-margin: em-calc(20);
 $title-selector: ".title";
 $content-selector: ".content";
 $active-region-selector: ".active";
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+$orbit-container-bg: #fff;
+
+$orbit-nav-bg: transparent;
+$orbit-nav-bg-hover: transparent;
+$orbit-nav-arrow-color: #fff;
+$orbit-nav-arrow-color-hover: #ccc;
+
+$orbit-bullet-nav-color: $colorGrayScaleG;
+$orbit-bullet-nav-color-active: $colorGrayScaleE;
+$orbit-bullet-radius: emCalc(10);
+
+/* Graceful Loading Wrapper and preloader */
+$wrapper-class: "slideshow-wrapper";
+$preloader-class: "preloader";
 
 // Make sure border radius matches unless we want it different.
 

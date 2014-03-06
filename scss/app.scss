@@ -57,9 +57,26 @@ body									{ min-width: 465px; }
 .addToCart:hover,
 .addToCart:active						{ background-color: $colorGrayScaleD; }
 
+.more 									{ position:absolute; bottom:0; right:0; padding-left: 70px; background: transparent url(../img/listEllipsisHelper.png) 0 0 repeat-y; @include icon(chevron14right, .8, inherit, after); }
+.more:after								{ position: relative; top: 3px; font-weight: bold; }
+
+.ajaxMore								{ margin-right: $innerPadding*2; text-align: center; }
+.ajaxMore a								{ @include icon(chevron14down, 1, inherit, after); text-transform: uppercase; }
+.ajaxMore a:after						{ vertical-align: middle; position: relative; top: -1px; left: 2px; font-weight: bold; }
+
 ///////////////////////////////////////////////////////////////////////////////
 
-.pdfWrapper								{ @include icon(pdf, 2.5, $colorNav, after); }
+.pdfWrapper								{ display: inline-block; @include icon(pdf, 2.5, $colorNav, after); }
+
+///////////////////////////////////////////////////////////////////////////////
+
+.slideshow								{ margin-bottom: $innerPadding*2; }
+.slideshow .orbit-bullets				{ position: absolute; margin: 0; top: $innerPadding; right: $innerPadding; z-index: 99; }
+.slideshow .orbit-bullets li			{ border: $colorGrayScaleE 1px solid; border: none; cursor: pointer; }
+.slideshow .orbit-prev					{ left: 1em; }
+.slideshow .orbit-next					{ right: 1em; }
+.slideshow .orbit-prev span				{ @include icon(chevron20left, 2.5); border: none; text-indent: 0 !important; }
+.slideshow .orbit-next span				{ @include icon(chevron20right, 2.5); border: none; text-indent: 0 !important; margin-left: 0; left: auto; }
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -70,7 +87,7 @@ a:active								{ color: $colorNav; }
 
 .inline-list							{ list-style: none; }
 
-.headerBar								{ height: 35px; line-height: 35px; margin-right: $innerPadding*2; padding: 0 $innerPadding; background-color: $colorGrayScaleE; @include ellipsis; }
+.headerBar								{ height: $headerBarHeight; line-height: 35px; margin-right: $innerPadding*2; padding: 0 $innerPadding; background-color: $colorGrayScaleE; @include ellipsis; }
 .headerBar h1							{ display: inline; color: $colorGrayScaleG; }
 .headerBar span							{ @include icon(chevron14right); color: $colorGrayScaleA;  }
 .headerBar span:before					{ position: relative; top: -2px; margin: 0 -2px 0 -4px; vertical-align: middle; }
@@ -97,19 +114,36 @@ a:active								{ color: $colorNav; }
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-h1										{ line-height: 1.1875; margin-bottom: 20px; }
-h2										{ line-height: 1.1923; }
-h3										{ line-height: 1.1818; }
-h4										{ line-height: 1.2105; }
-h5										{ line-height: 1.25; }
+h1,h2,h3,h4,h5,
+.more,
+.richTxt b,
+.tag a,.tagBlock span,
+.contextImgWrapper span					{ font-family: 'avenir_lt_pro85_heavy'; }
 
-#logoAnchor h2							{ font-family: "avenir_lt_pro95_black"; font-size: $logoFontsize; letter-spacing: 1px; line-height: 1; text-transform: uppercase; }
-#logoAnchor span						{ font-family: "avenir_lt_pro65_medium"; }
-#userPanel a							{ font-family: "avenir_lt_pro85_heavy"; font-size: $userPanelFontsize;  }
+h1										{ font-size: $h1Fontsize; line-height: 1.1875; }
+h2										{ font-size: $h2Fontsize; line-height: 1.1923; }
+h3										{ font-size: $h3Fontsize; line-height: 1.1818; }
+h4										{ font-size: $h4Fontsize; line-height: 1.1205; }
+h5										{ font-size: $h5Fontsize; line-height: 1.2500; }
+
+p										{ font-family: 'avenir_lt_pro55_roman'; font-size: $pFontsize; line-height: 1.3125; color: $colorGrayScaleC; }
+.richTxt .intro							{ font-size: $pFontsize; }
+.richTxt b								{ font-weight: normal; }
+.richTxt .info							{ font-size: $infoFontsize; color: $colorGrayScaleA; }
+
+.richTxt.programList ul,
+.richTxt.programList h4					{ font-family: 'century_schoolbook_proregular'; font-size: $pFontsize; line-height: 1.2; color: $colorGrayScaleA; list-style: none; }
+.richTxt.programList h4:after			{ content: '__'; display: block; margin-bottom: 1em; }
+.richTxt.programList b					{ font-family: 'century_schoolbook_probold'; font-weight: normal; }
+.richTxt.programList em					{ font-family: 'century_schoolbook_proitalic'; font-style: normal; }
+
+#logoAnchor h2							{ font-family: 'avenir_lt_pro95_black'; font-size: $logoFontsize; letter-spacing: 1px; line-height: 1; text-transform: uppercase; }
+#logoAnchor span						{ font-family: 'avenir_lt_pro65_medium'; }
+#userPanel a							{ font-family: 'avenir_lt_pro85_heavy'; font-size: $userPanelFontsize;  }
 #languageSwitcher a						{ font-size: $smallFontsize; }
-#cartAndWishlist time					{ font-family: "avenir_lt_pro95_black"; font-size: $smallFontsize; line-height: 1.2; color: $colorGrayScaleA; }
-#cartAndWishlist .title					{ font-family: "avenir_lt_pro85_heavy"; line-height: 1.2; color: $colorGrayScaleA; }
-#cartAndWishlist .artist				{ font-family: "avenir_lt_pro85_heavy"; font-size: $smallFontsize; line-height: 1.2; color: $colorGrayScaleD; }
+#cartAndWishlist time					{ font-family: 'avenir_lt_pro95_black'; font-size: $smallFontsize; line-height: 1.2; color: $colorGrayScaleA; }
+#cartAndWishlist .title					{ font-family: 'avenir_lt_pro85_heavy'; line-height: 1.2; color: $colorGrayScaleA; }
+#cartAndWishlist .artist				{ font-family: 'avenir_lt_pro85_heavy'; font-size: $smallFontsize; line-height: 1.2; color: $colorGrayScaleD; }
 
 nav a									{ font-family: 'avenir_lt_pro95_black'; font-size: $navFontsize; }
 
@@ -121,12 +155,14 @@ nav a									{ font-family: 'avenir_lt_pro95_black'; font-size: $navFontsize; }
 #calendar caption,
 #calendar legend						{ font-family: 'avenir_lt_pro95_black'; font-size: $blockHeaderFontsize; text-transform: uppercase; }
 #calendar td,
-#calendar label							{ font-family: 'avenir_lt_pro65_medium'; }
+#calendar label,
+.detailWrapper .quickLink a				{ font-family: 'avenir_lt_pro65_medium'; }
+.detailWrapper .quickLink a				{ font-size: 13px; line-height: 1.2; }
 #calendar label							{ font-size: $checkboxFontsize; }
 
 .tag a,
-#agendaList .contextImgWrapper span		{ font-family: "avenir_lt_pro85_heavy"; font-size: 10px; line-height: 1; text-transform: uppercase; }
-.tagBlock								{ font-family: "avenir_lt_pro85_heavy"; font-size: 18px; }
+#agendaList .contextImgWrapper span		{ font-size: 10px; line-height: 1; text-transform: uppercase; }
+.tagBlock								{ font-size: 18px; }
 
 .detailWrapper .title					{ font-family: 'avenir_lt_pro95_black'; font-size: $smallFontsize; /*text-transform: uppercase;*/ }
 
@@ -135,22 +171,30 @@ nav a									{ font-family: 'avenir_lt_pro95_black'; font-size: $navFontsize; }
 #calendar .submitButton					{ font-family: 'avenir_lt_pro95_black'; text-transform: uppercase; }
 
 #agendaList header div,
-.addToCart								{ font-family: "avenir_lt_pro85_heavy"; font-size: $smallFontsize; line-height: 1.2; }
+.addToCart								{ font-family: 'avenir_lt_pro85_heavy'; font-size: $smallFontsize; line-height: 1.2; }
 #agendaList header h2,
 #agendaList header p,
 #agendaList header h2					{ font-size: $listHeadingFontsize; line-height: 1.4; }
 #agendaList header p					{ font-size: $listSubFontsize; line-height: 1.2; color: $colorGrayScaleD; }
 #agendaList article > p					{ font-size: $listPFontsize; }
-#agendaList + .more a					{ font-family: 'avenir_lt_pro95_black'; font-size: $smallFontsize; }
-#agendaList article > p .more			{ font-family: "avenir_lt_pro85_heavy"; }
 
+.ajaxMore a								{ font-family: 'avenir_lt_pro95_black'; font-size: $smallFontsize; }
+
+.programma #mainColumn > header h1,
+.programma #mainColumn h2				{ font-size: 24px; line-height: 1.2; }
+.programma #mainColumn > header p		{ font-family: 'avenir_lt_pro85_heavy'; font-size: 18px; line-height: 1.1667; color: $colorGrayScaleA; }
+
+.detailWrapper .richTxt	h4				{ margin: .5em 0; }
+.detailWrapper h1 + h3					{ margin-top: .5em; }
 .detailWrapper .subColumn h3,
 .detailWrapper .subColumn .noscr + .headingStyle,
-.detailWrapper .subColumn .date ul		{ font-family: 'avenir_lt_pro65_medium'; font-size: $smallFontsize; display: block; line-height: 1.4; }
-.detailWrapper .subColumn .date time	{ font-family: "avenir_lt_pro85_heavy"; font-size: 26.5px; line-height: 1; color: $colorGrayScaleE; }
-.detailWrapper .subColumn .price ul		{ font-family: "avenir_lt_pro85_heavy"; font-size: 18px; line-height: 1.2; }
+.detailWrapper .subColumn .date ul		{ font-family: 'avenir_lt_pro65_medium'; font-size: $smallFontsize; margin-bottom: .3em; display: block; line-height: 1.4; }
+.detailWrapper .subColumn .date time	{ font-family: 'avenir_lt_pro85_heavy'; font-size: 26.5px; line-height: 1; color: $colorGrayScaleE; }
+.detailWrapper .subColumn .price ul		{ font-family: 'avenir_lt_pro85_heavy'; font-size: 18px; line-height: 1.2; }
+.detailWrapper .serviceLink a			{ font-family: 'avenir_lt_pro85_heavy'; }
+.detailWrapper .serviceLink span		{ font-family: 'avenir_lt_pro65_medium'; font-size: $smallFontsize; }
 
-.introduction							{ font-family: "century_schoolbook_proregular"; font-size: 20px; line-height: 1.25; }
+.introduction							{ font-family: 'century_schoolbook_proregular'; font-size: 20px; line-height: 1.25; }
 
 
 
@@ -275,24 +319,49 @@ header[role="banner"] .centerHelper				{ padding: 0 $column-gutter/2; @include c
 
 #calendar .tagBlock								{ background-color: $colorGrayScaleF; margin-top: $column-gutter*-1; }
 
+#calendar + article,
+#calendar + section								{ margin-top: $innerPadding*2; }
+
 ///////////////////////////////////////////////////////////////////////////////
 
-.section-container section:last-child .divider			{ display: none; }
+.divider												{ position: absolute; top: 10%; right: .5em; vertical-align: middle; }
+.quickLink .divider										{ top: -25%; }
+.divider span											{ display: block; line-height: 5px; @include icon(dot, .3, $colorGrayScaleE); }
+.section-container section:last-child .divider,
+.quickLink li:last-child .divider						{ display: none; }
 
-.detailWrapper .innerWrapper							{ @include clearfix; padding: $innerPadding*4; }
+#mainWrapper .detailWrapper 							{ background: #fff; min-height: 400px; width: 760px; margin: 2em auto 0 auto; }
+
+.detailWrapper .innerWrapper							{ @include clearfix; padding: $innerPadding*4; padding-bottom: $innerPadding*4 + $headerBarHeight; }
 .detailWrapper .mainColumn								{ float: left; width: 73.5%; padding-right: $innerPadding*2; }
 .detailWrapper .subColumn								{ float: right; width: 26.5%; }
 .detailWrapper hgroup									{ margin-bottom: 20px; }
 .detailWrapper .section-container .title:hover a		{ color: $colorGrayScaleD; }
-.detailWrapper .section-container .divider				{ position: absolute; top: 10%; right: .5em; vertical-align: middle; }
-.detailWrapper .section-container .divider span			{ display: block; line-height: 5px; @include icon(dot, .3, $colorGrayScaleE); }
-.detailWrapper .section-container .content p			{ border-top: $colorGrayScaleE 1px solid; padding-top: .5em; }
-.detailWrapper .section-container .content p:before		{ content: ""; display: block; height: .5em; }
+
+.detailWrapper .section-container .content > div		{ border-top: $colorGrayScaleE 1px solid; padding-top: .5em; }
+.detailWrapper .section-container .content > div:before	{ content: ""; display: block; height: .5em; }
 
 .detailWrapper .subColumn section						{ padding: $innerPadding 0; border-bottom: $colorGrayScaleE 1px solid; }
 .detailWrapper .subColumn ul							{ list-style: none; margin: 0; }
 .detailWrapper .subColumn .date time					{ display: block; margin-bottom: .4em; }
 .detailWrapper .subColumn .price .addToCart				{ position: relative; }
+
+.detailWrapper .headerBar								{ width: 100%; position: absolute; bottom: 0; }
+.detailWrapper .closeModal								{ @include icon(x20); padding: 10px; position: absolute; top: 0; right: 0; }
+
+.detailWrapper .quickLink								{ width: 100%; float: left; margin-top: $innerPadding*4; text-align: center; border: $colorGrayScaleF 1px solid; }
+.detailWrapper .quickLink .inline-list					{ margin: 0; display: block; }
+.detailWrapper .quickLink .inline-list li				{ float: none; margin-left: 0; padding-right: 1.5em; display: inline-block; position: relative; }
+
+#mainWrapper .detailWrapper.noModal						{ width: auto; }
+#mainWrapper .detailWrapper.noModal .innerWrapper		{ padding: $innerPadding*2; }
+#mainWrapper .detailWrapper.noModal .headerBar			{ position: static; }
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+
+
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -416,8 +485,6 @@ nav a:active						{ color: $colorGrayScaleB; }
 #agendaList .innerWrapper						{ margin-bottom: 0; padding: $innerPadding*2; padding-bottom: 0; }
 #agendaList article								{ height: 160px; border-bottom: $colorGrayScaleF 1px solid; padding-bottom: $innerPadding*2; padding-left: 280px; position: relative; }
 #agendaList article > p							{ margin-bottom: 0; line-height: 16px; height: 16px*3; position: relative; overflow: hidden; }
-#agendaList article > p .more 					{ position:absolute; bottom:0; right:0; padding-left: 70px; background: transparent url(../img/listEllipsisHelper.png) 0 0 repeat-y; @include icon(chevron14right, .8, inherit, after); }
-#agendaList article > p .more:after				{ position: relative; top: 3px; font-weight: bold; }
 #agendaList img,
 #agendaList .contextImgWrapper					{ width: 140px; height: 140px; position: absolute; top: 0; left: 0; }
 #agendaList header div							{ width: 100px; height: 140px; position: absolute; top: 0; left: 160px; }
@@ -437,15 +504,19 @@ nav a:active						{ color: $colorGrayScaleB; }
 
 #agendaList .contextImgWrapper span				{ position: absolute; bottom: 10%; left: 0; @include button($colorContext, $colorGrayScaleG, 10px); }
 
-#agendaList + .more								{ margin-right: $innerPadding*2; text-align: center; }
-#agendaList + .more a							{ @include icon(chevron14down, 1, inherit, after); text-transform: uppercase; }
-#agendaList + .more a:after						{ vertical-align: middle; position: relative; top: -1px; left: 2px; font-weight: bold; }
+///////////////////////////////////////////////////////////////////////////////
+
+.programma #mainColumn > header	p				{ position: relative; }
+.programma #mainColumn > header h1,
+.programma #mainColumn h2						{ margin-bottom: .3em; }
+.programma #mainColumn p						{ margin-bottom: 0; }
+.programma #mainColumn > header .more			{ @include icon(chevron14right, 1, inherit, after); }
 
 ///////////////////////////////////////////////////////////////////////////////
+
 @import "_breakpoints.scss";
 @import "_modals.scss";
 
-#mainWrapper .detailWrapper 		{ background: #fff; min-height: 400px; width: 760px; margin: 2em auto 0 auto; }
 @media only screen and (max-width: 1039px) {
 	#mainWrapper .detailWrapper		{ width: 100%; }
 }
