@@ -121,7 +121,6 @@ $headerDropdownHeight: auto;        // #winkelkar, #verlanglijst dropdown height
     font-style: normal;
 }
 
-
 @font-face {
     font-family: 'avenir_lt_pro55_roman';
     src: url('../fonts/linotype_-_avenirltpro-roman-webfont.eot');
@@ -132,7 +131,6 @@ $headerDropdownHeight: auto;        // #winkelkar, #verlanglijst dropdown height
     font-weight: normal;
     font-style: normal;
 }
-
 
 @font-face {
     font-family: 'avenir_lt_pro85_heavy';
@@ -145,7 +143,6 @@ $headerDropdownHeight: auto;        // #winkelkar, #verlanglijst dropdown height
     font-style: normal;
 }
 
-
 @font-face {
     font-family: 'avenir_lt_pro65_medium';
     src: url('../fonts/linotype_-_avenirltpro-medium-webfont.eot');
@@ -156,7 +153,6 @@ $headerDropdownHeight: auto;        // #winkelkar, #verlanglijst dropdown height
     font-weight: normal;
     font-style: normal;
 }
-
 
 @font-face {
     font-family: 'avenir_lt_pro95_black';
@@ -169,7 +165,6 @@ $headerDropdownHeight: auto;        // #winkelkar, #verlanglijst dropdown height
     font-style: normal;
 }
 
-
 @font-face {
     font-family: 'century_schoolbook_proregular';
     src: url('../fonts/monotype__-_centuryschoolbookpro-webfont.eot');
@@ -181,7 +176,6 @@ $headerDropdownHeight: auto;        // #winkelkar, #verlanglijst dropdown height
     font-style: normal;
 }
 
-
 @font-face {
     font-family: 'century_schoolbook_probold';
     src: url('../fonts/monotype__-_centuryschoolbookpro-bold-webfont.eot');
@@ -192,7 +186,6 @@ $headerDropdownHeight: auto;        // #winkelkar, #verlanglijst dropdown height
     font-weight: normal;
     font-style: normal;
 }
-
 
 @font-face {
     font-family: 'century_schoolbook_proitalic';
@@ -283,93 +276,93 @@ $iconSize: 20px;                            //icons have a base size at which th
 
 //base icon properties according to icomoon
 @mixin iconReset {
-    font-family: 'concertgebouw_iconfont';
-    font-weight: normal;
-    font-style: normal;
-    font-variant: normal;
-    line-height: 1;
-    speak: none;
-    text-transform: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	font-family: 'concertgebouw_iconfont';
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	line-height: 1;
+	speak: none;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 @mixin iconSet($icon) {
-    @if      $icon == soundoff          { content: "\e600"; }
-    @else if $icon == sound             { content: "\e601"; }
-    @else if $icon == youtube           { content: "\e602"; }
-    @else if $icon == x20               { content: "\e603"; }
-    @else if $icon == x14               { content: "\e604"; }
-    @else if $icon == vimeo             { content: "\e605"; }
-    @else if $icon == twitter           { content: "\e606"; }
-    @else if $icon == tumblr            { content: "\e607"; }
-    @else if $icon == spotify           { content: "\e608"; }
-    @else if $icon == rss               { content: "\e609"; }
-    @else if $icon == play              { content: "\e60a"; }
-    @else if $icon == pdf               { content: "\e60b"; }
-    @else if $icon == loupe             { content: "\e60c"; }
-    @else if $icon == linkedin          { content: "\e60d"; }
-    @else if $icon == heart             { content: "\e60e"; }
-    @else if $icon == goto              { content: "\e60f"; }
-    @else if $icon == facebook          { content: "\e610"; }
-    @else if $icon == dot               { content: "\e611"; }
-    @else if $icon == chevron20up       { content: "\e612"; }
-    @else if $icon == chevron20right    { content: "\e613"; }
-    @else if $icon == chevron20left     { content: "\e614"; }
-    @else if $icon == chevron20down     { content: "\e615"; }
-    @else if $icon == chevron14up       { content: "\e616"; }
-    @else if $icon == chevron14right    { content: "\e617"; }
-    @else if $icon == chevron14left     { content: "\e618"; }
-    @else if $icon == chevron14down     { content: "\e619"; }
-    @else if $icon == cart              { content: "\e61a"; }
-    @else if $icon == circle            { content: "\e61b"; }
-    @else if $icon == pdfbg             { content: "\e61c"; }
-    @else if $icon == required          { content: "*"; }
-    @else { content: "error" }
+	@if      $icon == soundoff			{ content: "\e600"; }
+	@else if $icon == sound				{ content: "\e601"; }
+	@else if $icon == youtube			{ content: "\e602"; }
+	@else if $icon == x20				{ content: "\e603"; }
+	@else if $icon == x14				{ content: "\e604"; }
+	@else if $icon == vimeo				{ content: "\e605"; }
+	@else if $icon == twitter			{ content: "\e606"; }
+	@else if $icon == tumblr			{ content: "\e607"; }
+	@else if $icon == spotify			{ content: "\e608"; }
+	@else if $icon == rss				{ content: "\e609"; }
+	@else if $icon == play				{ content: "\e60a"; }
+	@else if $icon == pdf				{ content: "\e60b"; }
+	@else if $icon == loupe				{ content: "\e60c"; }
+	@else if $icon == linkedin			{ content: "\e60d"; }
+	@else if $icon == heart				{ content: "\e60e"; }
+	@else if $icon == goto				{ content: "\e60f"; }
+	@else if $icon == facebook			{ content: "\e610"; }
+	@else if $icon == dot				{ content: "\e611"; }
+	@else if $icon == chevron20up		{ content: "\e612"; }
+	@else if $icon == chevron20right	{ content: "\e613"; }
+	@else if $icon == chevron20left		{ content: "\e614"; }
+	@else if $icon == chevron20down		{ content: "\e615"; }
+	@else if $icon == chevron14up		{ content: "\e616"; }
+	@else if $icon == chevron14right	{ content: "\e617"; }
+	@else if $icon == chevron14left		{ content: "\e618"; }
+	@else if $icon == chevron14down		{ content: "\e619"; }
+	@else if $icon == cart				{ content: "\e61a"; }
+	@else if $icon == circle			{ content: "\e61b"; }
+	@else if $icon == pdfbg				{ content: "\e61c"; }
+	@else if $icon == required			{ content: "*"; }
+	@else								{ content: "error" }
 }
 
 @mixin icon($icon, $size: 1, $color: inherit, $location: before) {
-    @if $icon == pdf {
-      position: relative;
-      &:before,
-      &:after { 
-        @include iconReset;
-        font-size: $size * $iconSize;
-        position: absolute; bottom: 0; right: -.12em; // stack before and after on top of each other
-      }
-      &:before  { @include iconSet(pdfbg); color: #fff; }
-      &:after   { @include iconSet($icon); color: $color; }
-    } @else if $icon == youtube
-          or $icon == vimeo
-          or $icon == twitter
-          or $icon == tumblr
-          or $icon == spotify
-          or $icon == linkedin
-          or $icon == facebook {
-      position: relative;
-      &:before,
-      &:after { 
-        @include iconReset;
-        font-size: $size * $iconSize;
-        position: absolute; top: 0; left: 0; // stack before and after on top of each other
-      }
-      &:before  { @include iconSet(circle); color: #fff; }
-      &:after   { @include iconSet($icon); color: $color; }
-    } @else if $location == before {
-        &:before {
-            @include iconReset;
-            @include iconSet($icon);
-            font-size: $size * $iconSize;
-            color: $color;
-        }
-    } @else if $location == after {
-        &:after {
-            @include iconReset;
-            @include iconSet($icon);
-            font-size: $size * $iconSize;
-            color: $color;
-        }
-    }
+	@if $icon == pdf {
+		position: relative;
+		&:before,
+		&:after {
+			@include iconReset;
+			font-size: $size * $iconSize;
+			position: absolute; bottom: 0; right: -.12em; // stack before and after on top of each other
+		}
+		&:before { @include iconSet(pdfbg); color: #fff; }
+		&:after { @include iconSet($icon); color: $color; }
+	} @else if $icon == youtube
+		or $icon == vimeo
+		or $icon == twitter
+		or $icon == tumblr
+		or $icon == spotify
+		or $icon == linkedin
+		or $icon == facebook {
+		position: relative;
+		&:before,
+		&:after {
+			@include iconReset;
+			font-size: $size * $iconSize;
+			position: absolute; top: 0; left: 0; // stack before and after on top of each other
+		}
+		&:before { @include iconSet(circle); color: #fff; }
+		&:after { @include iconSet($icon); color: $color; }
+	} @else if $location == before {
+		&:before {
+			@include iconReset;
+			@include iconSet($icon);
+			font-size: $size * $iconSize;
+			color: $color;
+		}
+	} @else if $location == after {
+		&:after {
+			@include iconReset;
+			@include iconSet($icon);
+			font-size: $size * $iconSize;
+			color: $color;
+		}
+	}
 }
 
 

@@ -127,9 +127,11 @@ h4										{ font-size: $h4Fontsize; line-height: 1.1205; }
 h5										{ font-size: $h5Fontsize; line-height: 1.2500; }
 
 p										{ font-family: 'avenir_lt_pro55_roman'; font-size: $pFontsize; line-height: 1.3125; color: $colorGrayScaleC; }
-.richTxt .intro							{ font-size: $pFontsize; }
 .richTxt b								{ font-weight: normal; }
 .richTxt .info							{ font-size: $infoFontsize; color: $colorGrayScaleA; }
+
+article .intro,
+section .intro							{ font-family: 'century_schoolbook_probold'; font-size: 20px; line-height: 1.25; }
 
 .richTxt.programList ul,
 .richTxt.programList h4					{ font-family: 'century_schoolbook_proregular'; font-size: $pFontsize; line-height: 1.2; color: $colorGrayScaleA; list-style: none; }
@@ -177,6 +179,14 @@ nav a									{ font-family: 'avenir_lt_pro95_black'; font-size: $navFontsize; }
 #agendaList header h2					{ font-size: $listHeadingFontsize; line-height: 1.4; }
 #agendaList header p					{ font-size: $listSubFontsize; line-height: 1.2; color: $colorGrayScaleD; }
 #agendaList article > p					{ font-size: $listPFontsize; }
+
+.programma-detail .price h3				{ font-size: 18px; line-height: 1.2; }
+.programma-detail .price li				{ font-family: 'avenir_lt_pro65_medium'; font-size: 13px; line-height: 1.3; }
+.programma-detail .price li span		{ font-family: 'avenir_lt_pro85_heavy'; font-size: 18px; line-height: 1.2; }
+
+#programmaList h2						{ font-size: 18px; line-height: 1.2; }
+#programmaList h3,
+#programmaList time						{ font-size: 14px; line-height: 1.2; }
 
 .ajaxMore a								{ font-family: 'avenir_lt_pro95_black'; font-size: $smallFontsize; }
 
@@ -332,7 +342,9 @@ header[role="banner"] .centerHelper				{ padding: 0 $column-gutter/2; @include c
 
 #mainWrapper .detailWrapper 							{ background: #fff; min-height: 400px; width: 760px; margin: 2em auto 0 auto; }
 
-.detailWrapper .innerWrapper							{ @include clearfix; padding: $innerPadding*4; padding-bottom: $innerPadding*4 + $headerBarHeight; }
+.detailWrapper.agenda-detail .innerWrapper				{ @include clearfix; padding: $innerPadding*4; padding-bottom: $innerPadding*4 + $headerBarHeight; }
+.detailWrapper.programma-detail .innerWrapper			{ @include clearfix; padding: $innerPadding*4; }
+
 .detailWrapper .mainColumn								{ float: left; width: 73.5%; padding-right: $innerPadding*2; }
 .detailWrapper .subColumn								{ float: right; width: 26.5%; }
 .detailWrapper hgroup									{ margin-bottom: 20px; }
@@ -494,13 +506,13 @@ nav a:active						{ color: $colorGrayScaleB; }
 
 .addToCart										{ position: absolute; bottom: 0; }
 
-#agendaList .added .addToCart:link,
-#agendaList .added .addToCart:visited			{ background-color: $colorGrayScaleD; }
-#agendaList .added .addToCart:hover				{ background-color: $colorGrayScaleE; }
-#agendaList .added .addToCart:active			{ background-color: $colorGrayScaleF; }
+.added .addToCart:link,
+.added .addToCart:visited			{ background-color: $colorGrayScaleD; }
+.added .addToCart:hover				{ background-color: $colorGrayScaleE; }
+.added .addToCart:active			{ background-color: $colorGrayScaleF; }
 
-#agendaList .noOrder header						{ color: $colorGrayScaleE; }
-#agendaList .noOrder .addToCart					{ @include button($colorGrayScaleG, $colorGrayScaleE, 10px); border: $colorGrayScaleE 1px solid; width: 100px; position: absolute; bottom: 0; text-align: center; }
+.noOrder header						{ color: $colorGrayScaleE; }
+.noOrder .addToCart					{ @include button($colorGrayScaleG, $colorGrayScaleE, 10px); border: $colorGrayScaleE 1px solid; width: 100px; position: absolute; bottom: 0; text-align: center; }
 
 #agendaList .contextImgWrapper span				{ position: absolute; bottom: 10%; left: 0; @include button($colorContext, $colorGrayScaleG, 10px); }
 
@@ -511,6 +523,23 @@ nav a:active						{ color: $colorGrayScaleB; }
 .programma #mainColumn h2						{ margin-bottom: .3em; }
 .programma #mainColumn p						{ margin-bottom: 0; }
 .programma #mainColumn > header .more			{ @include icon(chevron14right, 1, inherit, after); }
+
+.programma-detail								{  }
+.programma-detail .price ul						{ list-style: none; }
+.programma-detail .price li						{ margin: 1em 0; }
+.programma-detail .price span					{ display: block; }
+.programma-detail .addToCart					{ position: static; width: auto; }
+
+#programmaList									{ margin: 1em 0; }
+#programmaList ul								{ list-style: none; margin-top: .5em; }
+#programmaList li								{ @include clearfix; position: relative; padding: .6em 0; border-bottom: $colorGrayScaleE 1px solid; }
+#programmaList li + li							{ margin: 0; }
+#programmaList li:first-child					{ border-top: $colorGrayScaleE 1px solid; }
+#programmaList h3								{ float: left; display: inline; position: relative; top: .7em; }
+#programmaList time								{ position: absolute; top: .3em; left: 0; }
+#programmaList a								{ display: inline; float: right;  }
+#programmaList .addToCart						{  margin-left: .5em; }
+#programmaList .addToWishlist					{ height: 15px; }
 
 ///////////////////////////////////////////////////////////////////////////////
 
